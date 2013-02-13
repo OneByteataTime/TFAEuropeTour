@@ -7,12 +7,17 @@
 //
 
 #import "JTCFirstViewController.h"
+#import "JTCFlight.h"
+#import "JTCFlightsDataController.h"
 
 @interface JTCFirstViewController ()
 
 @end
 
 @implementation JTCFirstViewController
+
+@synthesize dataController = _dataController;
+@synthesize tableViewFlights = _tableViewFlights;
 
 - (void)viewDidLoad
 {
@@ -24,6 +29,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITableViewDataSource
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.dataController countOfFlightList];
 }
 
 @end

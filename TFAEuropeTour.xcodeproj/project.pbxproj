@@ -24,6 +24,12 @@
 		AA2B1F5C16CB414D00882834 /* JTCSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B1F5B16CB414D00882834 /* JTCSecondViewController.m */; };
 		AA2B1F5E16CB414D00882834 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1F5D16CB414D00882834 /* second.png */; };
 		AA2B1F6016CB414D00882834 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1F5F16CB414D00882834 /* second@2x.png */; };
+		AA2B1F6816CB42F300882834 /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1F6716CB42F300882834 /* 103-map.png */; };
+		AA2B1F6A16CB438000882834 /* 161-calculator.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1F6916CB438000882834 /* 161-calculator.png */; };
+		AA2B1F6C16CB43A200882834 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1F6B16CB43A200882834 /* 112-group.png */; };
+		AA2B1F6E16CB43BA00882834 /* 38-airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1F6D16CB43BA00882834 /* 38-airplane.png */; };
+		AA2B1F7216CB467D00882834 /* JTCFlight.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B1F7116CB467D00882834 /* JTCFlight.m */; };
+		AA2B1F7616CB48C200882834 /* JTCFlightsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B1F7516CB48C200882834 /* JTCFlightsDataController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,14 @@
 		AA2B1F5B16CB414D00882834 /* JTCSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTCSecondViewController.m; sourceTree = "<group>"; };
 		AA2B1F5D16CB414D00882834 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		AA2B1F5F16CB414D00882834 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		AA2B1F6716CB42F300882834 /* 103-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map.png"; sourceTree = "<group>"; };
+		AA2B1F6916CB438000882834 /* 161-calculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "161-calculator.png"; sourceTree = "<group>"; };
+		AA2B1F6B16CB43A200882834 /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
+		AA2B1F6D16CB43BA00882834 /* 38-airplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "38-airplane.png"; sourceTree = "<group>"; };
+		AA2B1F7016CB467D00882834 /* JTCFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCFlight.h; sourceTree = "<group>"; };
+		AA2B1F7116CB467D00882834 /* JTCFlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCFlight.m; sourceTree = "<group>"; };
+		AA2B1F7416CB48C200882834 /* JTCFlightsDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCFlightsDataController.h; sourceTree = "<group>"; };
+		AA2B1F7516CB48C200882834 /* JTCFlightsDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCFlightsDataController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +110,9 @@
 		AA2B1F3B16CB414D00882834 /* TFAEuropeTour */ = {
 			isa = PBXGroup;
 			children = (
+				AA2B1F7316CB489B00882834 /* DataControllers */,
+				AA2B1F6F16CB463B00882834 /* Domain */,
+				AA2B1F6616CB420700882834 /* Images */,
 				AA2B1F4416CB414D00882834 /* JTCAppDelegate.h */,
 				AA2B1F4516CB414D00882834 /* JTCAppDelegate.m */,
 				AA2B1F4D16CB414D00882834 /* MainStoryboard_iPhone.storyboard */,
@@ -125,6 +142,36 @@
 				AA2B1F4B16CB414D00882834 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA2B1F6616CB420700882834 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AA2B1F6D16CB43BA00882834 /* 38-airplane.png */,
+				AA2B1F6B16CB43A200882834 /* 112-group.png */,
+				AA2B1F6916CB438000882834 /* 161-calculator.png */,
+				AA2B1F6716CB42F300882834 /* 103-map.png */,
+			);
+			name = Images;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		AA2B1F6F16CB463B00882834 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AA2B1F7016CB467D00882834 /* JTCFlight.h */,
+				AA2B1F7116CB467D00882834 /* JTCFlight.m */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		AA2B1F7316CB489B00882834 /* DataControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA2B1F7416CB48C200882834 /* JTCFlightsDataController.h */,
+				AA2B1F7516CB48C200882834 /* JTCFlightsDataController.m */,
+			);
+			name = DataControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +236,10 @@
 				AA2B1F5916CB414D00882834 /* first@2x.png in Resources */,
 				AA2B1F5E16CB414D00882834 /* second.png in Resources */,
 				AA2B1F6016CB414D00882834 /* second@2x.png in Resources */,
+				AA2B1F6816CB42F300882834 /* 103-map.png in Resources */,
+				AA2B1F6A16CB438000882834 /* 161-calculator.png in Resources */,
+				AA2B1F6C16CB43A200882834 /* 112-group.png in Resources */,
+				AA2B1F6E16CB43BA00882834 /* 38-airplane.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +254,8 @@
 				AA2B1F4616CB414D00882834 /* JTCAppDelegate.m in Sources */,
 				AA2B1F5516CB414D00882834 /* JTCFirstViewController.m in Sources */,
 				AA2B1F5C16CB414D00882834 /* JTCSecondViewController.m in Sources */,
+				AA2B1F7216CB467D00882834 /* JTCFlight.m in Sources */,
+				AA2B1F7616CB48C200882834 /* JTCFlightsDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JTCFirstViewController : UIViewController
+@class JTCFlightsDataController;
+
+@interface JTCFirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableViewFlights;
+@property (strong, nonatomic) JTCFlightsDataController *dataController;
 
 @end
