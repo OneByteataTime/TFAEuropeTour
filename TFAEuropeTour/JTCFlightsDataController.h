@@ -16,6 +16,6 @@
 
 - (NSUInteger)countOfFlightList;
 - (JTCFlight *)objectInFlightListAtIndex:(NSUInteger)index;
-- (void)addFlightWithName:(NSString *)airlineName flightNumber: (NSString *)flightNumber;
+- (void)addFlightWithFlight:(JTCFlight *)flight;
 
 @end

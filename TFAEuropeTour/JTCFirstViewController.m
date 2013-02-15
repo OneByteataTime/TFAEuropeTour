@@ -19,6 +19,11 @@
 @synthesize dataController = _dataController;
 @synthesize tableViewFlights = _tableViewFlights;
 
+- (void)awakeFromNib
+{
+    self.dataController = [[JTCFlightsDataController alloc] init];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,12 +36,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UITableViewDataSource
 
+#pragma mark - Table view data source
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.dataController countOfFlightList];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"FlightCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    JTCFlight *flight = [self.dataController objectInFlightListAtIndex:indexPath.row];
+    
+    cell.textLabel.text = flight.airline;
+    cell.detailTextLabel.text = flight.flightNumber;
+    
+    return cell;
 }
 
 @end
