@@ -30,6 +30,8 @@
 		AA2B1F6E16CB43BA00882834 /* 38-airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1F6D16CB43BA00882834 /* 38-airplane.png */; };
 		AA2B1F7216CB467D00882834 /* JTCFlight.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B1F7116CB467D00882834 /* JTCFlight.m */; };
 		AA2B1F7616CB48C200882834 /* JTCFlightsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B1F7516CB48C200882834 /* JTCFlightsDataController.m */; };
+		AA77321116CDE09E00E21C0C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77321016CDE09E00E21C0C /* CoreData.framework */; };
+		AA77321416CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA77321216CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		AA2B1F7116CB467D00882834 /* JTCFlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCFlight.m; sourceTree = "<group>"; };
 		AA2B1F7416CB48C200882834 /* JTCFlightsDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCFlightsDataController.h; sourceTree = "<group>"; };
 		AA2B1F7516CB48C200882834 /* JTCFlightsDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCFlightsDataController.m; sourceTree = "<group>"; };
+		AA77321016CDE09E00E21C0C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AA77321316CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TFAEuropeTourModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA77321116CDE09E00E21C0C /* CoreData.framework in Frameworks */,
 				AA2B1F3616CB414D00882834 /* UIKit.framework in Frameworks */,
 				AA2B1F3816CB414D00882834 /* Foundation.framework in Frameworks */,
 				AA2B1F3A16CB414D00882834 /* CoreGraphics.framework in Frameworks */,
@@ -100,6 +105,7 @@
 		AA2B1F3416CB414D00882834 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA77321016CDE09E00E21C0C /* CoreData.framework */,
 				AA2B1F3516CB414D00882834 /* UIKit.framework */,
 				AA2B1F3716CB414D00882834 /* Foundation.framework */,
 				AA2B1F3916CB414D00882834 /* CoreGraphics.framework */,
@@ -133,6 +139,7 @@
 		AA2B1F3C16CB414D00882834 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AA77321216CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodeld */,
 				AA2B1F3D16CB414D00882834 /* TFAEuropeTour-Info.plist */,
 				AA2B1F3E16CB414D00882834 /* InfoPlist.strings */,
 				AA2B1F4116CB414D00882834 /* main.m */,
@@ -256,6 +263,7 @@
 				AA2B1F5C16CB414D00882834 /* JTCSecondViewController.m in Sources */,
 				AA2B1F7216CB467D00882834 /* JTCFlight.m in Sources */,
 				AA2B1F7616CB48C200882834 /* JTCFlightsDataController.m in Sources */,
+				AA77321416CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +401,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA77321216CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA77321316CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodel */,
+			);
+			currentVersion = AA77321316CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodel */;
+			path = TFAEuropeTourModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AA2B1F2A16CB414D00882834 /* Project object */;
 }

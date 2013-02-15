@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JTCFlight : NSObject
+@interface JTCFlight : NSManagedObject;
 
 @property (nonatomic, copy) NSString *airline;
-@property (nonatomic, copy) NSString *flightNumber;
+@property (nonatomic, copy) NSString *number;
 @property (nonatomic, copy) NSString *airportCode;
 @property (nonatomic, copy) NSString *airportName;
 @property (nonatomic, copy) NSString *departureTime;

@@ -11,7 +11,7 @@
 @implementation JTCFlight
 
 @synthesize airline = _airline;
-@synthesize flightNumber = _flightNumber;
+@synthesize number = _number;
 @synthesize airportCode = _airportCode;
 @synthesize airportName = _airportName;
 @synthesize departureTime = _departureTime;
@@ -23,7 +23,7 @@
     self = [super init];
     if (self) {
         _airline = airlineName;
-        _flightNumber = flightNumber;
+        _number = flightNumber;
         return self;
     }
     return nil;

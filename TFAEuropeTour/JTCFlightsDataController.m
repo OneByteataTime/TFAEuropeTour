@@ -18,6 +18,7 @@
 @implementation JTCFlightsDataController
 
 @synthesize flightList = _flightList;
+@synthesize managedObjectContext = _managedObjectContext;
 
 - (id)init {
     if (self = [super init]) {

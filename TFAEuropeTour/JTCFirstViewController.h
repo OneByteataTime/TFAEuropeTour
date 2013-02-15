@@ -14,4 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableViewFlights;
 @property (strong, nonatomic) JTCFlightsDataController *dataController;
 
+
+
 @end

@@ -13,6 +13,7 @@
 @interface JTCFlightsDataController : NSObject
 
 @property (nonatomic, copy) NSMutableArray *flightList;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (NSUInteger)countOfFlightList;
 - (JTCFlight *)objectInFlightListAtIndex:(NSUInteger)index;

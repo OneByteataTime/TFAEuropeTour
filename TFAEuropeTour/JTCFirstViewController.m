@@ -59,7 +59,7 @@
     JTCFlight *flight = [self.dataController objectInFlightListAtIndex:indexPath.row];
     
     cell.textLabel.text = flight.airline;
-    cell.detailTextLabel.text = flight.flightNumber;
+    cell.detailTextLabel.text = flight.number;
     
     return cell;
 }
