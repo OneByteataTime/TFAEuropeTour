@@ -4,61 +4,202 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--First View Controller - First-->
+        <!--Flights View Controller - First-->
         <scene sceneID="11">
             <objects>
-                <viewController title="First" id="2" customClass="JTCFirstViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="16">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yPM-yL-iIz">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FlightCell" textLabel="8b4-l8-AuM" detailTextLabel="JBe-KQ-stL" style="IBUITableViewCellStyleSubtitle" id="7de-sC-riN">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b4-l8-AuM">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBe-KQ-stL">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="2" id="0aB-B8-RwO"/>
-                                    <outlet property="delegate" destination="2" id="U6u-5Q-SWR"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yPM-yL-iIz" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" type="default" id="C9g-XW-e3O"/>
-                            <constraint firstItem="yPM-yL-iIz" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="JBb-89-5cG"/>
-                            <constraint firstItem="yPM-yL-iIz" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="Ppz-U6-yAk"/>
-                            <constraint firstItem="yPM-yL-iIz" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="XtR-hN-rya"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Flights" image="38-airplane.png" id="7"/>
-                    <connections>
-                        <outlet property="tableViewFlights" destination="yPM-yL-iIz" id="ttw-36-S4a"/>
-                    </connections>
+                <viewController title="First" id="2" customClass="JTCFlightsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yPM-yL-iIz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Flight Cell" textLabel="8b4-l8-AuM" detailTextLabel="JBe-KQ-stL" style="IBUITableViewCellStyleSubtitle" id="7de-sC-riN">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8b4-l8-AuM">
+                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JBe-KQ-stL">
+                                            <rect key="frame" x="10" y="24" width="36" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2" id="DTT-DP-H6i"/>
+                            <outlet property="delegate" destination="2" id="pNV-17-zLu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Flights" id="vVw-V4-0Ts">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7F2-Ot-AX1">
+                            <connections>
+                                <segue destination="18s-kR-pYW" kind="modal" id="CpL-0r-vaN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="-138"/>
+            <point key="canvasLocation" x="1179" y="-512"/>
+        </scene>
+        <!--Add Flight View Controller - Add Flight-->
+        <scene sceneID="Lag-NG-93e">
+            <objects>
+                <tableViewController id="9vf-fe-FeR" customClass="JTCAddFlightViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="RFV-dZ-qKg">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Airport" id="dp7-92-Ewu">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="97" id="Irr-j2-Gen">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="99"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="96"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Airport" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LG5-Zk-yaB">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="262" id="hCe-cd-4M2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="9vf-fe-FeR" id="obf-QX-WqQ"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Airport Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6yx-Gi-jro">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="9vf-fe-FeR" id="lg5-Ys-ABm"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="6yx-Gi-jro" firstAttribute="top" secondItem="LG5-Zk-yaB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KPj-jr-US1"/>
+                                            <constraint firstItem="LG5-Zk-yaB" firstAttribute="trailing" secondItem="6yx-Gi-jro" secondAttribute="trailing" type="default" id="bmV-Xw-T2F"/>
+                                            <constraint firstItem="LG5-Zk-yaB" firstAttribute="top" secondItem="Irr-j2-Gen" secondAttribute="top" constant="9" id="qUX-JB-iaF"/>
+                                            <constraint firstItem="LG5-Zk-yaB" firstAttribute="leading" secondItem="Irr-j2-Gen" secondAttribute="leading" constant="30" id="tOU-qc-aS4"/>
+                                            <constraint firstItem="6yx-Gi-jro" firstAttribute="leading" secondItem="LG5-Zk-yaB" secondAttribute="leading" type="default" id="w6c-VX-Pfg"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Flight" id="TgW-XH-aua">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="211" id="zys-Lc-lXo">
+                                        <rect key="frame" x="0.0" y="191" width="320" height="213"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="210"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Airline" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0YS-LZ-uGo">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="260" id="OUY-k1-a9J"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="9vf-fe-FeR" id="wSe-2q-fTo"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Flight Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y6m-zl-eHY">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="9vf-fe-FeR" id="Pqd-7e-lhv"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seat Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EEH-Px-pUj">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Departure Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AJn-Al-FIv">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="9vf-fe-FeR" id="43O-7r-Cgy"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arrival Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Vw-tM-FjC">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="9vf-fe-FeR" id="VLc-eW-kis"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="EEH-Px-pUj" firstAttribute="trailing" secondItem="y6m-zl-eHY" secondAttribute="trailing" type="default" id="0IT-fM-9QU"/>
+                                            <constraint firstItem="AJn-Al-FIv" firstAttribute="trailing" secondItem="EEH-Px-pUj" secondAttribute="trailing" type="default" id="1JV-H1-Veb"/>
+                                            <constraint firstItem="5Vw-tM-FjC" firstAttribute="trailing" secondItem="AJn-Al-FIv" secondAttribute="trailing" type="default" id="3bc-WP-oQx"/>
+                                            <constraint firstItem="y6m-zl-eHY" firstAttribute="top" secondItem="0YS-LZ-uGo" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Fxz-YG-k7J"/>
+                                            <constraint firstItem="y6m-zl-eHY" firstAttribute="centerX" secondItem="zys-Lc-lXo" secondAttribute="centerX" type="default" id="Ryn-X1-een"/>
+                                            <constraint firstItem="5Vw-tM-FjC" firstAttribute="top" secondItem="AJn-Al-FIv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SN5-nG-mBj"/>
+                                            <constraint firstItem="AJn-Al-FIv" firstAttribute="leading" secondItem="EEH-Px-pUj" secondAttribute="leading" type="default" id="SY1-KS-EBu"/>
+                                            <constraint firstItem="5Vw-tM-FjC" firstAttribute="leading" secondItem="AJn-Al-FIv" secondAttribute="leading" type="default" id="Slx-hm-ieQ"/>
+                                            <constraint firstItem="EEH-Px-pUj" firstAttribute="top" secondItem="y6m-zl-eHY" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VyI-ee-ubh"/>
+                                            <constraint firstItem="AJn-Al-FIv" firstAttribute="top" secondItem="EEH-Px-pUj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fqO-Z3-Nsy"/>
+                                            <constraint firstItem="0YS-LZ-uGo" firstAttribute="trailing" secondItem="y6m-zl-eHY" secondAttribute="trailing" type="default" id="gE8-t9-ncX"/>
+                                            <constraint firstItem="0YS-LZ-uGo" firstAttribute="leading" secondItem="y6m-zl-eHY" secondAttribute="leading" type="default" id="vJ7-Uh-PwA"/>
+                                            <constraint firstItem="EEH-Px-pUj" firstAttribute="leading" secondItem="y6m-zl-eHY" secondAttribute="leading" type="default" id="wmW-sM-we1"/>
+                                            <constraint firstItem="0YS-LZ-uGo" firstAttribute="top" secondItem="zys-Lc-lXo" secondAttribute="top" constant="9" id="yyR-TN-SMm"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="9vf-fe-FeR" id="xGp-5v-zMd"/>
+                            <outlet property="delegate" destination="9vf-fe-FeR" id="Etd-jC-UUD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Flight" id="pfI-TI-T9W">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JQ2-Tt-VbG">
+                            <connections>
+                                <segue destination="OA3-33-ZXd" kind="unwind" identifier="CancelInput" unwindAction="cancel:" id="eT9-D0-280"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="eIU-2t-lDQ">
+                            <connections>
+                                <action selector="buttonSave:" destination="9vf-fe-FeR" id="X7Z-MF-zgb"/>
+                                <segue destination="OA3-33-ZXd" kind="unwind" identifier="ReturnInput" unwindAction="done:" id="bqH-Yu-gnp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textAirline" destination="0YS-LZ-uGo" id="QWS-Zx-ivK"/>
+                        <outlet property="textAirport" destination="LG5-Zk-yaB" id="3Nq-yw-0oX"/>
+                        <outlet property="textAirportCode" destination="6yx-Gi-jro" id="iIC-RL-aH2"/>
+                        <outlet property="textArriveDate" destination="5Vw-tM-FjC" id="OCf-eJ-3G5"/>
+                        <outlet property="textDepartDate" destination="AJn-Al-FIv" id="Jre-ss-9Vn"/>
+                        <outlet property="textFlightNumber" destination="y6m-zl-eHY" id="Fxx-P8-IEE"/>
+                        <outlet property="textSeatNumber" destination="EEH-Px-pUj" id="aDo-36-WNK"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XPv-LY-Seu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OA3-33-ZXd" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2225" y="-632"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="13">
@@ -96,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="498"/>
+            <point key="canvasLocation" x="683" y="180"/>
         </scene>
         <!--View Controller - Currency-->
         <scene sceneID="ZkT-gX-2g8">
@@ -122,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wlc-AT-0G2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="505"/>
+            <point key="canvasLocation" x="692" y="1575"/>
         </scene>
         <!--View Controller - Contacts-->
         <scene sceneID="mWw-m4-cvY">
@@ -148,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iS6-m6-s8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="-138"/>
+            <point key="canvasLocation" x="766" y="865"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -161,7 +302,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
+                        <segue destination="0tX-XU-5VO" kind="relationship" relationship="viewControllers" id="26"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
                         <segue destination="pjC-ye-bGH" kind="relationship" relationship="viewControllers" id="dF2-ay-sSN"/>
                         <segue destination="aiM-fY-0NT" kind="relationship" relationship="viewControllers" id="8tk-4G-3bN"/>
@@ -170,6 +311,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
+        </scene>
+        <!--Navigation Controller - Flights-->
+        <scene sceneID="rL7-5y-jBv">
+            <objects>
+                <navigationController id="0tX-XU-5VO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Flights" image="38-airplane.png" id="7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n5T-ZK-TSV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="Kmg-I9-j2n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B49-wD-enj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="-512"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sxz-Y3-J5I">
+            <objects>
+                <navigationController id="18s-kR-pYW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Rps-UW-igQ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6dY-uF-YjU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9vf-fe-FeR" kind="relationship" relationship="rootViewController" id="tZ1-en-FPh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HC5-ex-t77" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="-816"/>
         </scene>
     </scenes>
     <resources>

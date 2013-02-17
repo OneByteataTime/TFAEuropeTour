@@ -7,7 +7,7 @@
 //
 
 #import "JTCFlightsDataController.h"
-#import "JTCFlight.h"
+#import "Flight.h"
 
 @interface JTCFlightsDataController()
 
@@ -36,14 +36,14 @@
 
 - (void)initializeDefaultDataList
 {
-    
+    /*
     NSMutableArray *flights = [[NSMutableArray alloc] init];
     self.flightList = flights;
     JTCFlight *flight;
     
     flight = [[JTCFlight alloc] initWithName:@"Lufthansa" flightNumber:@"LH443"];
     [self addFlightWithFlight:flight];
-    
+    */
 }
 
 - (NSUInteger)countOfFlightList
@@ -51,12 +51,12 @@
     return self.flightList.count;
 }
 
-- (JTCFlight *)objectInFlightListAtIndex:(NSUInteger)index
+- (Flight *)objectInFlightListAtIndex:(NSUInteger)index
 {
     return [self.flightList objectAtIndex:index];
 }
 
-- (void)addFlightWithFlight:(JTCFlight *)flight
+- (void)addFlightWithFlight:(Flight *)flight
 {
     [self.flightList addObject:flight];
 }

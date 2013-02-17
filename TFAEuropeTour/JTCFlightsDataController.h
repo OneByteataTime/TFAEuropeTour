@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class JTCFlight;
+@class Flight;
 
 @interface JTCFlightsDataController : NSObject
 
@@ -16,7 +16,7 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (NSUInteger)countOfFlightList;
-- (JTCFlight *)objectInFlightListAtIndex:(NSUInteger)index;
-- (void)addFlightWithFlight:(JTCFlight *)flight;
+- (Flight *)objectInFlightListAtIndex:(NSUInteger)index;
+- (void)addFlightWithFlight:(Flight *)flight;
 
 @end

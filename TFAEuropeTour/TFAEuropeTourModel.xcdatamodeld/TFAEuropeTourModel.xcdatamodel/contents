@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Flight" syncable="YES">
-        <attribute name="airline" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="airportCode" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="airportName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="arrivalTime" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="departureTime" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Airline" representedClassName="Airline" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" attributeType="String" syncable="YES"/>
+        <relationship name="offersFlights" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flight" inverseName="withAirline" inverseEntity="Flight" syncable="YES"/>
+    </entity>
+    <entity name="Airport" representedClassName="Airport" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" attributeType="String" syncable="YES"/>
+        <relationship name="hasTakeoffs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flight" inverseName="fromAirport" inverseEntity="Flight" syncable="YES"/>
+    </entity>
+    <entity name="Flight" representedClassName="Flight" syncable="YES">
+        <attribute name="arrivalDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="departureDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="number" attributeType="String" syncable="YES"/>
+        <attribute name="seatNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" attributeType="String" syncable="YES"/>
+        <relationship name="fromAirport" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Airport" inverseName="hasTakeoffs" inverseEntity="Airport" syncable="YES"/>
+        <relationship name="withAirline" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Airline" inverseName="offersFlights" inverseEntity="Airline" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Flight" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="Flight" positionX="-5076" positionY="-2421" width="128" height="148"/>
+        <element name="Airline" positionX="-4871" positionY="-2250" width="128" height="88"/>
+        <element name="Airport" positionX="-5312" positionY="-2358" width="128" height="103"/>
     </elements>
 </model>
