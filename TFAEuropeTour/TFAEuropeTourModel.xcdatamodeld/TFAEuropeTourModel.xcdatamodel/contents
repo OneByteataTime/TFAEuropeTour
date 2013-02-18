@@ -20,9 +20,18 @@
         <relationship name="fromAirport" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Airport" inverseName="hasTakeoffs" inverseEntity="Airport" syncable="YES"/>
         <relationship name="withAirline" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Airline" inverseName="offersFlights" inverseEntity="Airline" syncable="YES"/>
     </entity>
+    <entity name="ItineraryEvent" representedClassName="ItineraryEvent" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Flight" positionX="-5076" positionY="-2421" width="128" height="148"/>
         <element name="Airline" positionX="-4871" positionY="-2250" width="128" height="88"/>
         <element name="Airport" positionX="-5312" positionY="-2358" width="128" height="103"/>
+        <element name="Flight" positionX="-5076" positionY="-2421" width="128" height="148"/>
+        <element name="ItineraryEvent" positionX="-5211" positionY="-2644" width="128" height="133"/>
     </elements>
 </model>

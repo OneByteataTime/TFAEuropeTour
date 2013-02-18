@@ -9,7 +9,9 @@
 #import "JTCFlightsViewController.h"
 #import "JTCAddFlightViewController.h"
 #import "Flight+Create.h"
+#import "Flight+LiveSync.h"
 #import "Airline.h"
+#import "JTCFlightFetcher.h"
 
 @interface JTCFlightsViewController ()
 
@@ -31,19 +33,40 @@
                                                                                    cacheName:nil];
 }
 
+- (void)fetchFlightDataIntoDocument:(UIManagedDocument *)document
+{
+    dispatch_queue_t fetchQ = dispatch_queue_create("Live Sync", NULL);
+    dispatch_async(fetchQ, ^{
+        NSArray *flights = [JTCFlightFetcher flightsForTrip:@"TFAEurope"];
+        [document.managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
+            for (NSDictionary *flightInfo in flights) {
+                [Flight flightWithLiveInfo:flightInfo inManagedObjectContext:document.managedObjectContext];
+                // table will automatically update due to NSFetchedResultsController's observing of the NSMOC
+            }
+            // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
+            // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better
+            // because if we quit the app before autosave happens, then it'll come up blank next time we run
+            // this is what it would look like (ADDED AFTER LECTURE) ...
+            [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
+            // note that we don't do anything in the completion handler this time
+        }];
+    });
+}
+
 - (void)useDocument
 {
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self.tourDatabase.fileURL path]]) {
         // does not exist on disk, so create it
         [self.tourDatabase saveToURL:self.tourDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
             [self setupFetchedResultsController];
-            //[self fetchFlickrDataIntoDocument:self.tourDatabase];
+            [self fetchFlightDataIntoDocument:self.tourDatabase];
             
         }];
     } else if (self.tourDatabase.documentState == UIDocumentStateClosed) {
         // exists on disk, but we need to open it
         [self.tourDatabase openWithCompletionHandler:^(BOOL success) {
             [self setupFetchedResultsController];
+            [self fetchFlightDataIntoDocument:self.tourDatabase];
         }];
     } else if (self.tourDatabase.documentState == UIDocumentStateNormal) {
         // already open and ready to use

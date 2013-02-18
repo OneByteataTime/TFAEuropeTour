@@ -28,6 +28,13 @@
 		AA2B1F6C16CB43A200882834 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1F6B16CB43A200882834 /* 112-group.png */; };
 		AA2B1F6E16CB43BA00882834 /* 38-airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1F6D16CB43BA00882834 /* 38-airplane.png */; };
 		AA2B1F7616CB48C200882834 /* JTCFlightsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B1F7516CB48C200882834 /* JTCFlightsDataController.m */; };
+		AA3B8F9A16D12A160093FF21 /* JTCFlightFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8F9916D12A160093FF21 /* JTCFlightFetcher.m */; };
+		AA3B8F9D16D134C10093FF21 /* Flight+LiveSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8F9C16D134C10093FF21 /* Flight+LiveSync.m */; };
+		AA3B8FA016D136310093FF21 /* Airline+LiveSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8F9F16D136310093FF21 /* Airline+LiveSync.m */; };
+		AA3B8FA316D1363F0093FF21 /* Airport+LiveSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8FA216D1363F0093FF21 /* Airport+LiveSync.m */; };
+		AA3B8FA616D1C0780093FF21 /* JTCItineraryFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8FA516D1C0780093FF21 /* JTCItineraryFetcher.m */; };
+		AA3B8FAC16D1CD360093FF21 /* ItineraryEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8FAB16D1CD360093FF21 /* ItineraryEvent.m */; };
+		AA3B8FAF16D1CDE30093FF21 /* JTCItineraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8FAE16D1CDE30093FF21 /* JTCItineraryViewController.m */; };
 		AA58495B16CF1AEB0005A696 /* JTCAddFlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58495A16CF1AEB0005A696 /* JTCAddFlightViewController.m */; };
 		AA77321116CDE09E00E21C0C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77321016CDE09E00E21C0C /* CoreData.framework */; };
 		AA77321416CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA77321216CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodeld */; };
@@ -71,6 +78,20 @@
 		AA2B1F6D16CB43BA00882834 /* 38-airplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "38-airplane.png"; sourceTree = "<group>"; };
 		AA2B1F7416CB48C200882834 /* JTCFlightsDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCFlightsDataController.h; sourceTree = "<group>"; };
 		AA2B1F7516CB48C200882834 /* JTCFlightsDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCFlightsDataController.m; sourceTree = "<group>"; };
+		AA3B8F9816D12A160093FF21 /* JTCFlightFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCFlightFetcher.h; sourceTree = "<group>"; };
+		AA3B8F9916D12A160093FF21 /* JTCFlightFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCFlightFetcher.m; sourceTree = "<group>"; };
+		AA3B8F9B16D134C10093FF21 /* Flight+LiveSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Flight+LiveSync.h"; sourceTree = "<group>"; };
+		AA3B8F9C16D134C10093FF21 /* Flight+LiveSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Flight+LiveSync.m"; sourceTree = "<group>"; };
+		AA3B8F9E16D136310093FF21 /* Airline+LiveSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Airline+LiveSync.h"; sourceTree = "<group>"; };
+		AA3B8F9F16D136310093FF21 /* Airline+LiveSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Airline+LiveSync.m"; sourceTree = "<group>"; };
+		AA3B8FA116D1363F0093FF21 /* Airport+LiveSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Airport+LiveSync.h"; sourceTree = "<group>"; };
+		AA3B8FA216D1363F0093FF21 /* Airport+LiveSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Airport+LiveSync.m"; sourceTree = "<group>"; };
+		AA3B8FA416D1C0780093FF21 /* JTCItineraryFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCItineraryFetcher.h; sourceTree = "<group>"; };
+		AA3B8FA516D1C0780093FF21 /* JTCItineraryFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCItineraryFetcher.m; sourceTree = "<group>"; };
+		AA3B8FAA16D1CD360093FF21 /* ItineraryEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItineraryEvent.h; sourceTree = "<group>"; };
+		AA3B8FAB16D1CD360093FF21 /* ItineraryEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItineraryEvent.m; sourceTree = "<group>"; };
+		AA3B8FAD16D1CDE30093FF21 /* JTCItineraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCItineraryViewController.h; sourceTree = "<group>"; };
+		AA3B8FAE16D1CDE30093FF21 /* JTCItineraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCItineraryViewController.m; sourceTree = "<group>"; };
 		AA58495916CF1AEB0005A696 /* JTCAddFlightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCAddFlightViewController.h; sourceTree = "<group>"; };
 		AA58495A16CF1AEB0005A696 /* JTCAddFlightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCAddFlightViewController.m; sourceTree = "<group>"; };
 		AA77321016CDE09E00E21C0C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -143,6 +164,7 @@
 		AA2B1F3B16CB414D00882834 /* TFAEuropeTour */ = {
 			isa = PBXGroup;
 			children = (
+				AA3B8F9716D129DF0093FF21 /* Load */,
 				AA9450AE16D035E600B194C4 /* ViewModels */,
 				AA9450AA16D033A400B194C4 /* CoreData */,
 				AA2B1F7316CB489B00882834 /* DataControllers */,
@@ -151,6 +173,8 @@
 				AA2B1F4416CB414D00882834 /* JTCAppDelegate.h */,
 				AA2B1F4516CB414D00882834 /* JTCAppDelegate.m */,
 				AA2B1F4D16CB414D00882834 /* MainStoryboard_iPhone.storyboard */,
+				AA3B8FAD16D1CDE30093FF21 /* JTCItineraryViewController.h */,
+				AA3B8FAE16D1CDE30093FF21 /* JTCItineraryViewController.m */,
 				AA9450CD16D0755C00B194C4 /* JTCFlightDatePickerViewController.h */,
 				AA9450CE16D0755C00B194C4 /* JTCFlightDatePickerViewController.m */,
 				AA94508316D00BB200B194C4 /* JTCFlightsViewController.h */,
@@ -198,6 +222,8 @@
 		AA2B1F6F16CB463B00882834 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				AA3B8FAA16D1CD360093FF21 /* ItineraryEvent.h */,
+				AA3B8FAB16D1CD360093FF21 /* ItineraryEvent.m */,
 				AA9450CA16D05F0C00B194C4 /* Airport.h */,
 				AA9450CB16D05F0C00B194C4 /* Airport.m */,
 				AA9450C716D05F0C00B194C4 /* Airline.h */,
@@ -217,6 +243,17 @@
 			name = DataControllers;
 			sourceTree = "<group>";
 		};
+		AA3B8F9716D129DF0093FF21 /* Load */ = {
+			isa = PBXGroup;
+			children = (
+				AA3B8F9816D12A160093FF21 /* JTCFlightFetcher.h */,
+				AA3B8F9916D12A160093FF21 /* JTCFlightFetcher.m */,
+				AA3B8FA416D1C0780093FF21 /* JTCItineraryFetcher.h */,
+				AA3B8FA516D1C0780093FF21 /* JTCItineraryFetcher.m */,
+			);
+			name = Load;
+			sourceTree = "<group>";
+		};
 		AA9450AA16D033A400B194C4 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,10 +262,16 @@
 				AA94508716D00C3B00B194C4 /* CoreDataTableViewController.m */,
 				AA9450AB16D0340500B194C4 /* Flight+Create.h */,
 				AA9450AC16D0340500B194C4 /* Flight+Create.m */,
+				AA3B8F9B16D134C10093FF21 /* Flight+LiveSync.h */,
+				AA3B8F9C16D134C10093FF21 /* Flight+LiveSync.m */,
 				AA9450B516D0402700B194C4 /* Airline+Create.h */,
 				AA9450B616D0402700B194C4 /* Airline+Create.m */,
+				AA3B8F9E16D136310093FF21 /* Airline+LiveSync.h */,
+				AA3B8F9F16D136310093FF21 /* Airline+LiveSync.m */,
 				AA9450B816D0409200B194C4 /* Airport+Create.h */,
 				AA9450B916D0409200B194C4 /* Airport+Create.m */,
+				AA3B8FA116D1363F0093FF21 /* Airport+LiveSync.h */,
+				AA3B8FA216D1363F0093FF21 /* Airport+LiveSync.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -334,6 +377,13 @@
 				AA9450C916D05F0C00B194C4 /* Airline.m in Sources */,
 				AA9450CC16D05F0C00B194C4 /* Airport.m in Sources */,
 				AA9450CF16D0755D00B194C4 /* JTCFlightDatePickerViewController.m in Sources */,
+				AA3B8F9A16D12A160093FF21 /* JTCFlightFetcher.m in Sources */,
+				AA3B8F9D16D134C10093FF21 /* Flight+LiveSync.m in Sources */,
+				AA3B8FA016D136310093FF21 /* Airline+LiveSync.m in Sources */,
+				AA3B8FA316D1363F0093FF21 /* Airport+LiveSync.m in Sources */,
+				AA3B8FA616D1C0780093FF21 /* JTCItineraryFetcher.m in Sources */,
+				AA3B8FAC16D1CD360093FF21 /* ItineraryEvent.m in Sources */,
+				AA3B8FAF16D1CDE30093FF21 /* JTCItineraryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
