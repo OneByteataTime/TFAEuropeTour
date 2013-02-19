@@ -7,12 +7,50 @@
 //
 
 #import "JTCItineraryViewController.h"
+#import "JTCManagedDocumentHandler.h"
+#import "JTCItineraryFetcher.h"
+#import "ItineraryEvent+LiveSync.h"
 
 @interface JTCItineraryViewController ()
 
 @end
 
 @implementation JTCItineraryViewController
+
+@synthesize tourDatabase = _tourDatabase;
+
+- (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ItineraryEvent"];
+
+    NSSortDescriptor *sort1 = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+    NSSortDescriptor *sort2 = [NSSortDescriptor sortDescriptorWithKey:@"unique" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObjects:sort1, sort2, nil];
+        
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:self.tourDatabase.managedObjectContext
+                                                                          sectionNameKeyPath:@"date"
+                                                                                   cacheName:nil];
+}
+
+- (void)fetchItinerayDataIntoDocument:(UIManagedDocument *)document
+{
+    dispatch_queue_t fetchQ = dispatch_queue_create("Live Sync", NULL);
+    dispatch_async(fetchQ, ^{
+        NSArray *itineraryEvents = [JTCItineraryFetcher itineraryForTrip:@"TFAEurope"];
+        [document.managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
+            for (NSDictionary *eventInfo in itineraryEvents) {
+                [ItineraryEvent itineraryEventWithLiveInfo:eventInfo inManagedObjectContext:document.managedObjectContext];
+            }
+            // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
+            // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better
+            // because if we quit the app before autosave happens, then it'll come up blank next time we run
+            // this is what it would look like (ADDED AFTER LECTURE) ...
+            [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
+            // note that we don't do anything in the completion handler this time
+        }];
+    });
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,6 +72,17 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (!self.tourDatabase) {
+        [[JTCManagedDocumentHandler sharedDocumentHandler] performWithDocument:^(UIManagedDocument *document) {
+            self.tourDatabase = document;
+            [self setupFetchedResultsController];
+            [self fetchItinerayDataIntoDocument:document];
+        }];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -44,15 +93,33 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"EventCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    ItineraryEvent *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
     // Configure the cell...
+    cell.textLabel.text = event.title;
+    cell.detailTextLabel.text = event.summary;
     
     return cell;
 }
 
 #pragma mark - Table view delegate
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss zzzz"];
+    
+    NSString *sectionTitle = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    NSDate *sectionDate = [dateFormatter dateFromString:sectionTitle];
+    
+    [dateFormatter setDateFormat:@"MMM dd yyyy"];
+    sectionTitle = [dateFormatter stringFromDate:sectionDate];
+    
+    return sectionTitle;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

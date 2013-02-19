@@ -12,6 +12,7 @@
 #import "Flight+LiveSync.h"
 #import "Airline.h"
 #import "JTCFlightFetcher.h"
+#import "JTCManagedDocumentHandler.h"
 
 @interface JTCFlightsViewController ()
 
@@ -104,13 +105,22 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    if (!self.tourDatabase) {
+        [[JTCManagedDocumentHandler sharedDocumentHandler] performWithDocument:^(UIManagedDocument *document) {
+            self.tourDatabase = document;
+            [self setupFetchedResultsController];
+            [self fetchFlightDataIntoDocument:document];
+        }];
+    }
+
+    /*
     if (!self.tourDatabase) {  // for demo purposes, we'll create a default database if none is set
         NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
         url = [url URLByAppendingPathComponent:@"TFAEuropeTourDatabase"];
         // url is now "<Documents Directory>/TFAEuroperTourDatabase"
         self.tourDatabase = [[UIManagedDocument alloc] initWithFileURL:url]; // setter will create this for us on disk
     }
-
+    */
 }
 
 - (void)didReceiveMemoryWarning

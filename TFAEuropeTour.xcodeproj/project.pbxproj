@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA226DE616D30C4700F8F59D /* JTCManagedDocumentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA226DE516D30C4700F8F59D /* JTCManagedDocumentHandler.m */; };
+		AA226DE916D315A600F8F59D /* ItineraryEvent+LiveSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AA226DE816D315A600F8F59D /* ItineraryEvent+LiveSync.m */; };
 		AA2B1F3616CB414D00882834 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2B1F3516CB414D00882834 /* UIKit.framework */; };
 		AA2B1F3816CB414D00882834 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2B1F3716CB414D00882834 /* Foundation.framework */; };
 		AA2B1F3A16CB414D00882834 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2B1F3916CB414D00882834 /* CoreGraphics.framework */; };
@@ -51,6 +53,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA226DE416D30C4700F8F59D /* JTCManagedDocumentHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCManagedDocumentHandler.h; sourceTree = "<group>"; };
+		AA226DE516D30C4700F8F59D /* JTCManagedDocumentHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCManagedDocumentHandler.m; sourceTree = "<group>"; };
+		AA226DE716D315A600F8F59D /* ItineraryEvent+LiveSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ItineraryEvent+LiveSync.h"; sourceTree = "<group>"; };
+		AA226DE816D315A600F8F59D /* ItineraryEvent+LiveSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ItineraryEvent+LiveSync.m"; sourceTree = "<group>"; };
 		AA2B1F3216CB414D00882834 /* TFAEuropeTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFAEuropeTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA2B1F3516CB414D00882834 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA2B1F3716CB414D00882834 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -172,7 +178,10 @@
 				AA2B1F6616CB420700882834 /* Images */,
 				AA2B1F4416CB414D00882834 /* JTCAppDelegate.h */,
 				AA2B1F4516CB414D00882834 /* JTCAppDelegate.m */,
+				AA226DE416D30C4700F8F59D /* JTCManagedDocumentHandler.h */,
+				AA226DE516D30C4700F8F59D /* JTCManagedDocumentHandler.m */,
 				AA2B1F4D16CB414D00882834 /* MainStoryboard_iPhone.storyboard */,
+				AA2B1F5016CB414D00882834 /* MainStoryboard_iPad.storyboard */,
 				AA3B8FAD16D1CDE30093FF21 /* JTCItineraryViewController.h */,
 				AA3B8FAE16D1CDE30093FF21 /* JTCItineraryViewController.m */,
 				AA9450CD16D0755C00B194C4 /* JTCFlightDatePickerViewController.h */,
@@ -181,7 +190,6 @@
 				AA94508416D00BB200B194C4 /* JTCFlightsViewController.m */,
 				AA58495916CF1AEB0005A696 /* JTCAddFlightViewController.h */,
 				AA58495A16CF1AEB0005A696 /* JTCAddFlightViewController.m */,
-				AA2B1F5016CB414D00882834 /* MainStoryboard_iPad.storyboard */,
 				AA2B1F5616CB414D00882834 /* first.png */,
 				AA2B1F5816CB414D00882834 /* first@2x.png */,
 				AA2B1F5A16CB414D00882834 /* JTCSecondViewController.h */,
@@ -272,6 +280,8 @@
 				AA9450B916D0409200B194C4 /* Airport+Create.m */,
 				AA3B8FA116D1363F0093FF21 /* Airport+LiveSync.h */,
 				AA3B8FA216D1363F0093FF21 /* Airport+LiveSync.m */,
+				AA226DE716D315A600F8F59D /* ItineraryEvent+LiveSync.h */,
+				AA226DE816D315A600F8F59D /* ItineraryEvent+LiveSync.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -384,6 +394,8 @@
 				AA3B8FA616D1C0780093FF21 /* JTCItineraryFetcher.m in Sources */,
 				AA3B8FAC16D1CD360093FF21 /* ItineraryEvent.m in Sources */,
 				AA3B8FAF16D1CDE30093FF21 /* JTCItineraryViewController.m in Sources */,
+				AA226DE616D30C4700F8F59D /* JTCManagedDocumentHandler.m in Sources */,
+				AA226DE916D315A600F8F59D /* ItineraryEvent+LiveSync.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
