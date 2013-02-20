@@ -50,6 +50,8 @@
 		AA9450C916D05F0C00B194C4 /* Airline.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9450C816D05F0C00B194C4 /* Airline.m */; };
 		AA9450CC16D05F0C00B194C4 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9450CB16D05F0C00B194C4 /* Airport.m */; };
 		AA9450CF16D0755D00B194C4 /* JTCFlightDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9450CE16D0755C00B194C4 /* JTCFlightDatePickerViewController.m */; };
+		AAAD9FFA16D4764A0000EE54 /* JTCItineraryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAD9FF916D4764A0000EE54 /* JTCItineraryDetailViewController.m */; };
+		AAAD9FFC16D4894A0000EE54 /* glyphicons_335_pin_classic.png in Resources */ = {isa = PBXBuildFile; fileRef = AAAD9FFB16D4894A0000EE54 /* glyphicons_335_pin_classic.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +124,9 @@
 		AA9450CB16D05F0C00B194C4 /* Airport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Airport.m; sourceTree = "<group>"; };
 		AA9450CD16D0755C00B194C4 /* JTCFlightDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCFlightDatePickerViewController.h; sourceTree = "<group>"; };
 		AA9450CE16D0755C00B194C4 /* JTCFlightDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCFlightDatePickerViewController.m; sourceTree = "<group>"; };
+		AAAD9FF816D4764A0000EE54 /* JTCItineraryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCItineraryDetailViewController.h; sourceTree = "<group>"; };
+		AAAD9FF916D4764A0000EE54 /* JTCItineraryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCItineraryDetailViewController.m; sourceTree = "<group>"; };
+		AAAD9FFB16D4894A0000EE54 /* glyphicons_335_pin_classic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_335_pin_classic.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +189,8 @@
 				AA2B1F5016CB414D00882834 /* MainStoryboard_iPad.storyboard */,
 				AA3B8FAD16D1CDE30093FF21 /* JTCItineraryViewController.h */,
 				AA3B8FAE16D1CDE30093FF21 /* JTCItineraryViewController.m */,
+				AAAD9FF816D4764A0000EE54 /* JTCItineraryDetailViewController.h */,
+				AAAD9FF916D4764A0000EE54 /* JTCItineraryDetailViewController.m */,
 				AA9450CD16D0755C00B194C4 /* JTCFlightDatePickerViewController.h */,
 				AA9450CE16D0755C00B194C4 /* JTCFlightDatePickerViewController.m */,
 				AA94508316D00BB200B194C4 /* JTCFlightsViewController.h */,
@@ -218,6 +225,7 @@
 		AA2B1F6616CB420700882834 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AAAD9FFB16D4894A0000EE54 /* glyphicons_335_pin_classic.png */,
 				AA2B1F6D16CB43BA00882834 /* 38-airplane.png */,
 				AA2B1F6B16CB43A200882834 /* 112-group.png */,
 				AA2B1F6916CB438000882834 /* 161-calculator.png */,
@@ -361,6 +369,7 @@
 				AA2B1F6A16CB438000882834 /* 161-calculator.png in Resources */,
 				AA2B1F6C16CB43A200882834 /* 112-group.png in Resources */,
 				AA2B1F6E16CB43BA00882834 /* 38-airplane.png in Resources */,
+				AAAD9FFC16D4894A0000EE54 /* glyphicons_335_pin_classic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +405,7 @@
 				AA3B8FAF16D1CDE30093FF21 /* JTCItineraryViewController.m in Sources */,
 				AA226DE616D30C4700F8F59D /* JTCManagedDocumentHandler.m in Sources */,
 				AA226DE916D315A600F8F59D /* ItineraryEvent+LiveSync.m in Sources */,
+				AAAD9FFA16D4764A0000EE54 /* JTCItineraryDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

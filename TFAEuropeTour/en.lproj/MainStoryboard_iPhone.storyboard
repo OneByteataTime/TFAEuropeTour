@@ -268,6 +268,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="nXm-Y8-eTO" kind="push" id="j3j-HK-1ll"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -276,6 +279,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tj0-dm-z33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1349" y="192"/>
+        </scene>
+        <!--Itinerary Detail View Controller - Detail View-->
+        <scene sceneID="wKh-VY-99G">
+            <objects>
+                <viewController id="nXm-Y8-eTO" customClass="JTCItineraryDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3rK-vQ-dtK">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="NOL-zU-zoE">
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" type="user" id="g6A-lK-vwp"/>
+                                    <constraint firstAttribute="width" constant="290" id="zoB-TA-iGy"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" red="0.50980395079999996" green="0.50980395079999996" blue="0.50980395079999996" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="clipping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOh-iR-5yO">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="283" id="Dse-nK-3Qy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.50980395079999996" green="0.50980395079999996" blue="0.50980395079999996" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Notes:" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tm5-h4-BBK">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="81l-wJ-pcH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDf-Sr-hcW">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.50980395079999996" green="0.50980395079999996" blue="0.50980395079999996" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tdm-rz-6Yy">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="ZLq-hK-iw3"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="compose" id="9s6-mR-fTA"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="T9q-OQ-Zzq"/>
+                                    <barButtonItem image="glyphicons_335_pin_classic.png" style="plain" id="ZSC-Tz-h8m"/>
+                                    <barButtonItem style="plain" systemItem="camera" id="YNb-gy-SMq"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cOh-iR-5yO" firstAttribute="top" secondItem="3rK-vQ-dtK" secondAttribute="top" constant="20" symbolic="YES" type="default" id="1K6-ez-vQh"/>
+                            <constraint firstItem="WDf-Sr-hcW" firstAttribute="top" secondItem="Tm5-h4-BBK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3ov-C5-ohE"/>
+                            <constraint firstItem="Tdm-rz-6Yy" firstAttribute="bottom" secondItem="3rK-vQ-dtK" secondAttribute="bottom" type="default" id="CTW-la-7lp"/>
+                            <constraint firstItem="Tm5-h4-BBK" firstAttribute="leading" secondItem="3rK-vQ-dtK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SlP-8z-aDz"/>
+                            <constraint firstItem="WDf-Sr-hcW" firstAttribute="leading" secondItem="3rK-vQ-dtK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ZGC-7I-tfc"/>
+                            <constraint firstItem="NOL-zU-zoE" firstAttribute="top" secondItem="cOh-iR-5yO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cX6-VI-TFT"/>
+                            <constraint firstItem="Tdm-rz-6Yy" firstAttribute="centerX" secondItem="cOh-iR-5yO" secondAttribute="centerX" type="default" id="nn1-4Q-oWJ"/>
+                            <constraint firstItem="cOh-iR-5yO" firstAttribute="leading" secondItem="3rK-vQ-dtK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="o9f-Pa-Xpt"/>
+                            <constraint firstItem="Tm5-h4-BBK" firstAttribute="top" secondItem="NOL-zU-zoE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="obA-Ee-pGC"/>
+                            <constraint firstItem="NOL-zU-zoE" firstAttribute="leading" secondItem="3rK-vQ-dtK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pbp-4f-QP6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail View" id="tqw-Jy-H5e">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="FaN-QR-sbm"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="labelNotes" destination="WDf-Sr-hcW" id="89o-c2-0xK"/>
+                        <outlet property="labelSummary" destination="NOL-zU-zoE" id="yoZ-P3-uxD"/>
+                        <outlet property="labelTime" destination="cOh-iR-5yO" id="vCa-lz-PD4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgf-Ic-GiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1845" y="198"/>
         </scene>
         <!--Navigation Controller - Itinerary-->
         <scene sceneID="vFl-ic-NCG">
@@ -410,7 +497,53 @@
         <image name="112-group.png" width="32" height="21"/>
         <image name="161-calculator.png" width="22" height="28"/>
         <image name="38-airplane.png" width="22" height="24"/>
+        <image name="glyphicons_335_pin_classic.png" width="24" height="24"/>
     </resources>
+    <classes>
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="JTCAddFlightViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCAddFlightViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dateChanged:"/>
+                <relationship kind="outlet" name="textAirline" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textAirport" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textAirportCode" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textArriveDate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textDepartDate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textFlightNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textSeatNumber" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="JTCFlightsViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCFlightsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="JTCItineraryDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCItineraryDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="labelNotes" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelSummary" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelTime" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="JTCItineraryViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCItineraryViewController.h"/>
+        </class>
+        <class className="JTCSecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCSecondViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
