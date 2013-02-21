@@ -332,7 +332,11 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="compose" id="9s6-mR-fTA"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="T9q-OQ-Zzq"/>
-                                    <barButtonItem image="glyphicons_335_pin_classic.png" style="plain" id="ZSC-Tz-h8m"/>
+                                    <barButtonItem image="glyphicons_335_pin_classic.png" style="plain" id="ZSC-Tz-h8m">
+                                        <connections>
+                                            <segue destination="OwJ-Us-WNf" kind="push" id="5Yy-Km-YV7"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="camera" id="YNb-gy-SMq"/>
                                 </items>
                             </toolbar>
@@ -363,6 +367,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgf-Ic-GiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1845" y="198"/>
+        </scene>
+        <!--Check In View Controller-->
+        <scene sceneID="1zK-2k-BY9">
+            <objects>
+                <viewController id="OwJ-Us-WNf" customClass="JTCCheckInViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m69-qq-knk">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tbK-Sf-LWR">
+                                <connections>
+                                    <outlet property="delegate" destination="OwJ-Us-WNf" id="IMf-yl-8Du"/>
+                                </connections>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJY-88-f9Z">
+                                <items>
+                                    <barButtonItem style="plain" systemItem="bookmarks" id="duI-ru-2FX">
+                                        <connections>
+                                            <action selector="storeLocation:" destination="OwJ-Us-WNf" id="q1L-tE-PDj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tDp-H4-tFJ"/>
+                                    <barButtonItem style="plain" systemItem="compose" id="l4i-oB-rKq"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qJY-88-f9Z" firstAttribute="bottom" secondItem="m69-qq-knk" secondAttribute="bottom" type="default" id="JTQ-lY-2xT"/>
+                            <constraint firstItem="qJY-88-f9Z" firstAttribute="top" secondItem="tbK-Sf-LWR" secondAttribute="bottom" type="default" id="PUV-6Z-Shv"/>
+                            <constraint firstItem="tbK-Sf-LWR" firstAttribute="centerX" secondItem="qJY-88-f9Z" secondAttribute="centerX" type="default" id="be5-Eu-1EY"/>
+                            <constraint firstItem="tbK-Sf-LWR" firstAttribute="trailing" secondItem="m69-qq-knk" secondAttribute="trailing" type="default" id="jl2-ix-JdK"/>
+                            <constraint firstItem="tbK-Sf-LWR" firstAttribute="top" secondItem="m69-qq-knk" secondAttribute="top" type="default" id="r1r-Tr-II0"/>
+                            <constraint firstItem="qJY-88-f9Z" firstAttribute="leading" secondItem="m69-qq-knk" secondAttribute="leading" type="default" id="wIU-aa-vel"/>
+                            <constraint firstItem="qJY-88-f9Z" firstAttribute="trailing" secondItem="m69-qq-knk" secondAttribute="trailing" type="default" id="yA4-WH-MOP"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="LWm-xv-LA7"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapCheckIn" destination="tbK-Sf-LWR" id="8B8-zG-T71"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXm-6F-Wvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2349" y="198"/>
         </scene>
         <!--Navigation Controller - Itinerary-->
         <scene sceneID="vFl-ic-NCG">
@@ -514,6 +565,13 @@
                 <relationship kind="outlet" name="textDepartDate" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="textFlightNumber" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="textSeatNumber" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="JTCCheckInViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCCheckInViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="storeLocation:"/>
+                <relationship kind="outlet" name="mapCheckIn" candidateClass="MKMapView"/>
             </relationships>
         </class>
         <class className="JTCFlightsViewController" superclassName="CoreDataTableViewController">

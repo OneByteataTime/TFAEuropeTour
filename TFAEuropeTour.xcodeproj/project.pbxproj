@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA094B5116D5CC43006ACA65 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA094B5016D5CC43006ACA65 /* MapKit.framework */; };
+		AA094B5416D5CD7D006ACA65 /* JTCCheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA094B5316D5CD7D006ACA65 /* JTCCheckInViewController.m */; };
+		AA094B5716D5D5EC006ACA65 /* JTCCheckInAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA094B5616D5D5EC006ACA65 /* JTCCheckInAnnotation.m */; };
 		AA226DE616D30C4700F8F59D /* JTCManagedDocumentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA226DE516D30C4700F8F59D /* JTCManagedDocumentHandler.m */; };
 		AA226DE916D315A600F8F59D /* ItineraryEvent+LiveSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AA226DE816D315A600F8F59D /* ItineraryEvent+LiveSync.m */; };
 		AA2B1F3616CB414D00882834 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2B1F3516CB414D00882834 /* UIKit.framework */; };
@@ -55,6 +58,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA094B5016D5CC43006ACA65 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AA094B5216D5CD7D006ACA65 /* JTCCheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JTCCheckInViewController.h; path = ../JTCCheckInViewController.h; sourceTree = "<group>"; };
+		AA094B5316D5CD7D006ACA65 /* JTCCheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JTCCheckInViewController.m; path = ../JTCCheckInViewController.m; sourceTree = "<group>"; };
+		AA094B5516D5D5EC006ACA65 /* JTCCheckInAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCCheckInAnnotation.h; sourceTree = "<group>"; };
+		AA094B5616D5D5EC006ACA65 /* JTCCheckInAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCCheckInAnnotation.m; sourceTree = "<group>"; };
 		AA226DE416D30C4700F8F59D /* JTCManagedDocumentHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCManagedDocumentHandler.h; sourceTree = "<group>"; };
 		AA226DE516D30C4700F8F59D /* JTCManagedDocumentHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCManagedDocumentHandler.m; sourceTree = "<group>"; };
 		AA226DE716D315A600F8F59D /* ItineraryEvent+LiveSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ItineraryEvent+LiveSync.h"; sourceTree = "<group>"; };
@@ -134,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA094B5116D5CC43006ACA65 /* MapKit.framework in Frameworks */,
 				AA77321116CDE09E00E21C0C /* CoreData.framework in Frameworks */,
 				AA2B1F3616CB414D00882834 /* UIKit.framework in Frameworks */,
 				AA2B1F3816CB414D00882834 /* Foundation.framework in Frameworks */,
@@ -147,6 +156,7 @@
 		AA2B1F2916CB414D00882834 = {
 			isa = PBXGroup;
 			children = (
+				AA094B5016D5CC43006ACA65 /* MapKit.framework */,
 				AA2B1F3B16CB414D00882834 /* TFAEuropeTour */,
 				AA2B1F3416CB414D00882834 /* Frameworks */,
 				AA2B1F3316CB414D00882834 /* Products */,
@@ -185,8 +195,12 @@
 				AA2B1F4516CB414D00882834 /* JTCAppDelegate.m */,
 				AA226DE416D30C4700F8F59D /* JTCManagedDocumentHandler.h */,
 				AA226DE516D30C4700F8F59D /* JTCManagedDocumentHandler.m */,
-				AA2B1F4D16CB414D00882834 /* MainStoryboard_iPhone.storyboard */,
 				AA2B1F5016CB414D00882834 /* MainStoryboard_iPad.storyboard */,
+				AA2B1F4D16CB414D00882834 /* MainStoryboard_iPhone.storyboard */,
+				AA094B5516D5D5EC006ACA65 /* JTCCheckInAnnotation.h */,
+				AA094B5616D5D5EC006ACA65 /* JTCCheckInAnnotation.m */,
+				AA094B5216D5CD7D006ACA65 /* JTCCheckInViewController.h */,
+				AA094B5316D5CD7D006ACA65 /* JTCCheckInViewController.m */,
 				AA3B8FAD16D1CDE30093FF21 /* JTCItineraryViewController.h */,
 				AA3B8FAE16D1CDE30093FF21 /* JTCItineraryViewController.m */,
 				AAAD9FF816D4764A0000EE54 /* JTCItineraryDetailViewController.h */,
@@ -406,6 +420,8 @@
 				AA226DE616D30C4700F8F59D /* JTCManagedDocumentHandler.m in Sources */,
 				AA226DE916D315A600F8F59D /* ItineraryEvent+LiveSync.m in Sources */,
 				AAAD9FFA16D4764A0000EE54 /* JTCItineraryDetailViewController.m in Sources */,
+				AA094B5416D5CD7D006ACA65 /* JTCCheckInViewController.m in Sources */,
+				AA094B5716D5D5EC006ACA65 /* JTCCheckInAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
