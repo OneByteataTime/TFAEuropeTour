@@ -106,21 +106,21 @@
     return cell;
 }
 
-#pragma mark - Table view delegate
-
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss zzzz"];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss zzzz"];
+
+        NSString *sectionTitle = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+        NSDate *sectionDate = [dateFormatter dateFromString:sectionTitle];
     
-    NSString *sectionTitle = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
-    NSDate *sectionDate = [dateFormatter dateFromString:sectionTitle];
+        [dateFormatter setDateFormat:@"MMM dd yyyy"];
+        sectionTitle = [dateFormatter stringFromDate:sectionDate];
     
-    [dateFormatter setDateFormat:@"MMM dd yyyy"];
-    sectionTitle = [dateFormatter stringFromDate:sectionDate];
-    
-    return sectionTitle;
+        return sectionTitle;
 }
+
+#pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -133,6 +133,8 @@
      */
 }
 
+
+#pragma mark - Segue Section
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];

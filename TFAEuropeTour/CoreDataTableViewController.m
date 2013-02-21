@@ -80,6 +80,7 @@
 	return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
 }
 
+/*
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
 {
 	return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
@@ -89,6 +90,7 @@
 {
     return [self.fetchedResultsController sectionIndexTitles];
 }
+*/
 
 #pragma mark - NSFetchedResultsControllerDelegate
 
