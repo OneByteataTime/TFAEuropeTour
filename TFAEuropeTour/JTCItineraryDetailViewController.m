@@ -21,7 +21,7 @@
     [self.scrollViewSummary sizeToFit];
     
     self.navigationItem.title = self.itineraryEvent.title;
-    //self.labelTitle.text = self.itineraryEvent.title;
+    self.labelNotes.text = self.itineraryEvent.notes;
     
     self.labelTime.text = self.itineraryEvent.time;
 }
@@ -44,5 +44,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
+}
 
 @end

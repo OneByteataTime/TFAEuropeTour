@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="11G63b" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Airline" representedClassName="Airline" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unique" attributeType="String" syncable="YES"/>
@@ -32,6 +32,6 @@
         <element name="Airline" positionX="-4871" positionY="-2250" width="128" height="88"/>
         <element name="Airport" positionX="-5312" positionY="-2358" width="128" height="103"/>
         <element name="Flight" positionX="-5076" positionY="-2421" width="128" height="148"/>
-        <element name="ItineraryEvent" positionX="-5211" positionY="-2644" width="128" height="135"/>
+        <element name="ItineraryEvent" positionX="-5267" positionY="-2610" width="128" height="135"/>
     </elements>
 </model>

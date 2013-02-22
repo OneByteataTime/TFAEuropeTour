@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ItineraryEvent.h"
 
-@interface JTCItineraryDetailViewController : UITableViewController
+@interface JTCItineraryDetailViewController : UITableViewController <UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewSummary;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewNotes;
 
 @property (strong, nonatomic) ItineraryEvent *itineraryEvent;
 
