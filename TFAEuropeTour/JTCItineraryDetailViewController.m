@@ -17,7 +17,12 @@
 - (void)loadDetails
 {
     self.labelSummary.text = self.itineraryEvent.summary;
+    [self.labelSummary sizeToFit];
+    [self.scrollViewSummary sizeToFit];
+    
     self.navigationItem.title = self.itineraryEvent.title;
+    //self.labelTitle.text = self.itineraryEvent.title;
+    
     self.labelTime.text = self.itineraryEvent.time;
 }
 
