@@ -11,6 +11,6 @@
 
 @interface JTCItineraryViewController : CoreDataTableViewController
 
-@property (nonatomic, strong) UIManagedDocument *tourDatabase;  // Model is a Core Data database of photos
+@property (nonatomic, strong) UIManagedDocument *tourDatabase;
 
 @end

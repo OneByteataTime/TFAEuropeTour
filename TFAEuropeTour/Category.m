@@ -1,20 +1,20 @@
 //
-//  Airport.m
+//  Category.m
 //  TFAEuropeTour
 //
 //  Created by Steve Jackson on 2/23/13.
 //  Copyright (c) 2013 Steve Jackson. All rights reserved.
 //
 
-#import "Airport.h"
-#import "Flight.h"
+#import "Category.h"
+#import "ItineraryEvent.h"
 
 
-@implementation Airport
+@implementation Category
 
-@dynamic code;
 @dynamic name;
+@dynamic imageName;
 @dynamic unique;
-@dynamic hasTakeoffs;
+@dynamic groupsEvents;
 
 @end

@@ -11,6 +11,8 @@
 #import "JTCManagedDocumentHandler.h"
 #import "JTCItineraryFetcher.h"
 #import "ItineraryEvent+LiveSync.h"
+#import "JTCCategoryFetcher.h"
+#import "Category+LiveSync.h"
 
 @interface JTCItineraryViewController ()
 
@@ -38,8 +40,15 @@
 {
     dispatch_queue_t fetchQ = dispatch_queue_create("Live Sync", NULL);
     dispatch_async(fetchQ, ^{
+        NSArray *categories = [JTCCategoryFetcher defaultCategories:@"TFAEurope"];
         NSArray *itineraryEvents = [JTCItineraryFetcher itineraryForTrip:@"TFAEurope"];
-        [document.managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
+        
+        [document.managedObjectContext performBlock:^{
+            
+            for (NSDictionary *categoryInfo in categories) {
+                [Category categoryWithLiveSync:categoryInfo inManagedObjectContext:document.managedObjectContext];
+            }
+            
             for (NSDictionary *eventInfo in itineraryEvents) {
                 [ItineraryEvent itineraryEventWithLiveInfo:eventInfo inManagedObjectContext:document.managedObjectContext];
             }
@@ -102,6 +111,9 @@
     // Configure the cell...
     cell.textLabel.text = event.title;
     cell.detailTextLabel.text = event.summary;
+    
+    NSString *imageName = event.belongsToCategory.imageName;
+    [[cell imageView] setImage:[UIImage imageNamed:imageName]];
     
     return cell;
 }

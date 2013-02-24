@@ -8,8 +8,32 @@
 
 #import "ItineraryEvent+LiveSync.h"
 #import "JTCItineraryFetcher.h"
+#import "Category+LiveSync.h"
 
 @implementation ItineraryEvent (LiveSync)
+
++ (Category *)findCategory:(NSString *)categoryKey inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    Category *category = nil;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Category"];
+    request.predicate = [NSPredicate predicateWithFormat:@"unique=%@", categoryKey];
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"unique" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    NSError *error = nil;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    
+    if (!matches || ([matches count] == 0)) {
+        // handle error
+    }
+    else {
+        category = [matches lastObject];
+    }
+   
+    return category;
+}
 
 + (ItineraryEvent *)itineraryEventWithLiveInfo:(NSDictionary *)eventInfo inManagedObjectContext:(NSManagedObjectContext *)context
 {
@@ -37,6 +61,9 @@
         itineraryEvent.date = [dateFormatter dateFromString:eventInfo[EVENT_DATE]];
         itineraryEvent.time = eventInfo[EVENT_TIME];
         itineraryEvent.unique = eventInfo[EVENT_KEY];
+        
+        
+        itineraryEvent.belongsToCategory = [self findCategory:eventInfo[EVENT_CATEGORY] inManagedObjectContext:context];
         
     } else {
         itineraryEvent = [matches lastObject];

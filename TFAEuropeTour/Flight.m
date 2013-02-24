@@ -2,7 +2,7 @@
 //  Flight.m
 //  TFAEuropeTour
 //
-//  Created by Steve Jackson on 2/16/13.
+//  Created by Steve Jackson on 2/23/13.
 //  Copyright (c) 2013 Steve Jackson. All rights reserved.
 //
 
@@ -15,8 +15,8 @@
 
 @dynamic arrivalDate;
 @dynamic departureDate;
-@dynamic seatNumber;
 @dynamic number;
+@dynamic seatNumber;
 @dynamic unique;
 @dynamic fromAirport;
 @dynamic withAirline;

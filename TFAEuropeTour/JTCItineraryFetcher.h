@@ -13,6 +13,7 @@
 #define EVENT_DATE @"date"
 #define EVENT_KEY @"key"
 #define EVENT_TIME @"time"
+#define EVENT_CATEGORY @"category"
 
 @interface JTCItineraryFetcher : NSObject
 

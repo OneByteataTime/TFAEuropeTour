@@ -8,12 +8,14 @@
 
 #import "JTCAppDelegate.h"
 #import "JTCFlightsDataController.h"
+#import "JTCCategoryFetcher.h"
 
 @implementation JTCAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

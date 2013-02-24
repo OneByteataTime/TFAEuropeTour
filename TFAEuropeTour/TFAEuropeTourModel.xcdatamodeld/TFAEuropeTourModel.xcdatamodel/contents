@@ -11,6 +11,19 @@
         <attribute name="unique" attributeType="String" syncable="YES"/>
         <relationship name="hasTakeoffs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flight" inverseName="fromAirport" inverseEntity="Flight" syncable="YES"/>
     </entity>
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="groupsEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItineraryEvent" inverseName="belongsToCategory" inverseEntity="ItineraryEvent" syncable="YES"/>
+    </entity>
+    <entity name="CheckIn" representedClassName="CheckIn" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="locationForEvent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ItineraryEvent" inverseName="mapPins" inverseEntity="ItineraryEvent" syncable="YES"/>
+    </entity>
     <entity name="Flight" representedClassName="Flight" syncable="YES">
         <attribute name="arrivalDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="departureDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -27,11 +40,15 @@
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unique" attributeType="String" syncable="YES"/>
+        <relationship name="belongsToCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="groupsEvents" inverseEntity="Category" syncable="YES"/>
+        <relationship name="mapPins" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CheckIn" inverseName="locationForEvent" inverseEntity="CheckIn" syncable="YES"/>
     </entity>
     <elements>
         <element name="Airline" positionX="-4871" positionY="-2250" width="128" height="88"/>
         <element name="Airport" positionX="-5312" positionY="-2358" width="128" height="103"/>
         <element name="Flight" positionX="-5076" positionY="-2421" width="128" height="148"/>
-        <element name="ItineraryEvent" positionX="-5267" positionY="-2610" width="128" height="135"/>
+        <element name="ItineraryEvent" positionX="-5148" positionY="-2754" width="128" height="163"/>
+        <element name="Category" positionX="-4898" positionY="-2590" width="128" height="103"/>
+        <element name="CheckIn" positionX="-5418" positionY="-2709" width="128" height="118"/>
     </elements>
 </model>
