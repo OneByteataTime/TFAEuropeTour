@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ItineraryEvent.h"
 
+
 @interface JTCItineraryEditViewController : UITableViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) ItineraryEvent *itineraryEvent;

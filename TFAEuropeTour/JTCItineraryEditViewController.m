@@ -7,6 +7,7 @@
 //
 
 #import "JTCItineraryEditViewController.h"
+#import "JTCCheckInViewController.h"
 
 @interface JTCItineraryEditViewController ()
 
@@ -80,6 +81,10 @@
         self.itineraryEvent.time = self.textBoxTime.text;
         self.itineraryEvent.title = self.textBoxTitle.text;
         self.itineraryEvent.date = eventDate;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"showMap"]) {
+        [segue.destinationViewController performSelector:@selector(setItineraryEvent:) withObject:self.itineraryEvent];
     }
 }
 

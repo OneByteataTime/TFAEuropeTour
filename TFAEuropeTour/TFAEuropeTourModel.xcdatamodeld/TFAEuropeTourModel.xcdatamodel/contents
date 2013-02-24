@@ -22,6 +22,7 @@
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="locationForEvent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ItineraryEvent" inverseName="mapPins" inverseEntity="ItineraryEvent" syncable="YES"/>
     </entity>
     <entity name="Flight" representedClassName="Flight" syncable="YES">
@@ -46,9 +47,9 @@
     <elements>
         <element name="Airline" positionX="-4871" positionY="-2250" width="128" height="88"/>
         <element name="Airport" positionX="-5312" positionY="-2358" width="128" height="103"/>
+        <element name="Category" positionX="-4898" positionY="-2590" width="128" height="103"/>
+        <element name="CheckIn" positionX="-5418" positionY="-2709" width="128" height="133"/>
         <element name="Flight" positionX="-5076" positionY="-2421" width="128" height="148"/>
         <element name="ItineraryEvent" positionX="-5148" positionY="-2754" width="128" height="163"/>
-        <element name="Category" positionX="-4898" positionY="-2590" width="128" height="103"/>
-        <element name="CheckIn" positionX="-5418" positionY="-2709" width="128" height="118"/>
     </elements>
 </model>

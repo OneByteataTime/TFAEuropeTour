@@ -8,12 +8,17 @@
 
 #import "JTCCheckInViewController.h"
 #import "JTCCheckInAnnotation.h"
+#import "CheckIn+Create.h"
+#import "JTCManagedDocumentHandler.h"
 
 @interface JTCCheckInViewController ()
 
 @end
 
 @implementation JTCCheckInViewController
+
+@synthesize itineraryEvent = _itineraryEvent;
+@synthesize tourDatabase = _tourDatabase;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +33,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (!self.tourDatabase) {
+        [[JTCManagedDocumentHandler sharedDocumentHandler] performWithDocument:^(UIManagedDocument *document) {
+            self.tourDatabase = document;
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,8 +84,24 @@
 }
 
 - (IBAction)storeLocation:(id)sender {
+    
+    CheckIn *checkIn = [CheckIn checkInFromLocation:[self.mapCheckIn userLocation] itineraryEvent:self.itineraryEvent inManagedObjectContext:self.tourDatabase.managedObjectContext];
+    
     JTCCheckInAnnotation *annotation = [[JTCCheckInAnnotation alloc] init];
     [annotation setCoordinate:[self.mapCheckIn userLocation].location.coordinate];
     [self.mapCheckIn addAnnotation:annotation];
+}
+
+- (IBAction)doneAddingNote {
+    self.textNote.hidden = YES;
+    self.buttonDone.hidden = YES;
+    self.textBoxName.hidden = YES;
+}
+
+- (IBAction)addNote:(id)sender {
+    
+    self.textNote.hidden = NO;
+    self.buttonDone.hidden = NO;
+    self.textBoxName.hidden = NO;
 }
 @end
