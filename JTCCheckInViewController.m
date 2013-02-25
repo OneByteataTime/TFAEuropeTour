@@ -13,12 +13,15 @@
 
 @interface JTCCheckInViewController ()
 
+@property (nonatomic, strong) CheckIn *activeCheckIn;
+
 @end
 
 @implementation JTCCheckInViewController
 
 @synthesize itineraryEvent = _itineraryEvent;
 @synthesize tourDatabase = _tourDatabase;
+@synthesize activeCheckIn = _activeCheckIn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -83,9 +86,17 @@
     return av;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.textBoxName) {
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
 - (IBAction)storeLocation:(id)sender {
     
-    CheckIn *checkIn = [CheckIn checkInFromLocation:[self.mapCheckIn userLocation] itineraryEvent:self.itineraryEvent inManagedObjectContext:self.tourDatabase.managedObjectContext];
+    [CheckIn checkInFromLocation:[self.mapCheckIn userLocation] itineraryEvent:self.itineraryEvent inManagedObjectContext:self.tourDatabase.managedObjectContext];
     
     JTCCheckInAnnotation *annotation = [[JTCCheckInAnnotation alloc] init];
     [annotation setCoordinate:[self.mapCheckIn userLocation].location.coordinate];
@@ -96,6 +107,11 @@
     self.textNote.hidden = YES;
     self.buttonDone.hidden = YES;
     self.textBoxName.hidden = YES;
+    
+    self.activeCheckIn.note = self.textNote.text;
+    self.activeCheckIn.name = self.textBoxName.text;
+    
+    [self.view endEditing:YES];
 }
 
 - (IBAction)addNote:(id)sender {
@@ -103,5 +119,12 @@
     self.textNote.hidden = NO;
     self.buttonDone.hidden = NO;
     self.textBoxName.hidden = NO;
+    
+    CheckIn *checkIn = [CheckIn checkInFromLocation:[self.mapCheckIn userLocation] itineraryEvent:self.itineraryEvent inManagedObjectContext:self.tourDatabase.managedObjectContext];
+    
+    self.textBoxName.text = checkIn.name;
+    self.textNote.text = checkIn.note;
+    
+    self.activeCheckIn = checkIn;
 }
 @end

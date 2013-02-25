@@ -18,9 +18,11 @@
     double longitude = location.coordinate.longitude;
     double latitude = location.coordinate.latitude;
     
+    NSString *uniqueKey = [NSString stringWithFormat:@"%f:%f", latitude, longitude];
+    
     NSSet *itineraryCheckins =
     [itineraryEvent.mapPins filteredSetUsingPredicate:
-     [NSPredicate predicateWithFormat:@"latitude == %f && longitude == %f", latitude, longitude]];
+    [NSPredicate predicateWithFormat:@"unique == %@", uniqueKey]];
     
     if ([itineraryCheckins count] == 0) {
         checkIn = [NSEntityDescription insertNewObjectForEntityForName:@"CheckIn" inManagedObjectContext:context];
@@ -28,6 +30,7 @@
         checkIn.longitude = [NSNumber numberWithDouble:longitude];
         checkIn.latitude = [NSNumber numberWithDouble:latitude];
         checkIn.name = itineraryEvent.title;
+        checkIn.unique = uniqueKey;
         
         checkIn.locationForEvent = itineraryEvent;
     }

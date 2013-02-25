@@ -11,7 +11,7 @@
 #import "ItineraryEvent.h"
 #import "CheckIn.h"
 
-@interface JTCCheckInViewController : UIViewController <MKMapViewDelegate>
+@interface JTCCheckInViewController : UIViewController <MKMapViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 
 @property (nonatomic, strong) UIManagedDocument *tourDatabase;
 

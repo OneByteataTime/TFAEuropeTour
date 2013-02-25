@@ -28,7 +28,6 @@
     
     self.navigationItem.title = self.itineraryEvent.title;
     self.labelNotes.text = self.itineraryEvent.notes;
-    
     self.labelTime.text = self.itineraryEvent.time;
 }
 
@@ -74,10 +73,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"EditItinerary"]) {
+    if ([[segue identifier] isEqualToString:@"editItinerary"]) {
         UINavigationController *navigationController = [segue destinationViewController];
         JTCItineraryEditViewController *detailViewController = [navigationController.viewControllers objectAtIndex:0];
         detailViewController.itineraryEvent = self.itineraryEvent;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"showLocations"]) {
+        [segue.destinationViewController performSelector:@selector(setItineraryEvent:) withObject:self.itineraryEvent];
     }
 }
 

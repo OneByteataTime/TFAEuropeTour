@@ -82,10 +82,6 @@
         self.itineraryEvent.title = self.textBoxTitle.text;
         self.itineraryEvent.date = eventDate;
     }
-    
-    if ([[segue identifier] isEqualToString:@"showMap"]) {
-        [segue.destinationViewController performSelector:@selector(setItineraryEvent:) withObject:self.itineraryEvent];
-    }
 }
 
 @end
