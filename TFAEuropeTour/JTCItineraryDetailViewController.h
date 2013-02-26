@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelSummary;
 @property (weak, nonatomic) IBOutlet UILabel *labelTime;
 @property (weak, nonatomic) IBOutlet UILabel *labelNotes;
+@property (weak, nonatomic) IBOutlet UIImageView *imageCategory;
 
 @end

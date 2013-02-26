@@ -126,7 +126,7 @@
         NSString *sectionTitle = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
         NSDate *sectionDate = [dateFormatter dateFromString:sectionTitle];
     
-        [dateFormatter setDateFormat:@"MMM dd yyyy"];
+        [dateFormatter setDateFormat:@"EEE MMM dd"];
         sectionTitle = [dateFormatter stringFromDate:sectionDate];
     
         return sectionTitle;

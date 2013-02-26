@@ -10,6 +10,7 @@
 #import "JTCCheckInAnnotation.h"
 #import "CheckIn+Create.h"
 #import "JTCManagedDocumentHandler.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface JTCCheckInViewController ()
 
@@ -22,6 +23,7 @@
 @synthesize itineraryEvent = _itineraryEvent;
 @synthesize tourDatabase = _tourDatabase;
 @synthesize activeCheckIn = _activeCheckIn;
+@synthesize selectedCheckIn = _selectedCheckIn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,13 +58,29 @@
 #pragma mark Map Kit View delegate
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
-    if (0.00001 > [mapView userLocation].location.coordinate.latitude) {
-        [self performSelector:@selector(mapViewDidFinishLoadingMap:) withObject:mapView afterDelay:1.0];
-        return;
+    MKUserLocation *userLocation = nil;
+    
+    if (self.selectedCheckIn)
+    {
+        self.activeCheckIn = self.selectedCheckIn;
+        
+        // create coordinate
+        CLLocationCoordinate2D selectedPos = CLLocationCoordinate2DMake([self.selectedCheckIn.latitude doubleValue], [self.selectedCheckIn.longitude doubleValue]);
+        userLocation = [[MKUserLocation alloc] init];
+        userLocation.coordinate = selectedPos;
+    }
+    else
+    {
+        // Give time for mapview to initialize and locate
+        if (0.00001 > [mapView userLocation].location.coordinate.latitude) {
+            [self performSelector:@selector(mapViewDidFinishLoadingMap:) withObject:mapView afterDelay:1.0];
+            return;
+        }
+        userLocation = [mapView userLocation];
     }
     
     MKCoordinateRegion region = [mapView region];
-    region.center = [mapView userLocation].location.coordinate;
+    region.center = userLocation.coordinate;
     region.span.latitudeDelta = 0.02;
     region.span.longitudeDelta = 0.02;
     [mapView setRegion:region animated:YES];

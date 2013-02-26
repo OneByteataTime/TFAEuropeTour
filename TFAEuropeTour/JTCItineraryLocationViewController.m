@@ -140,6 +140,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showMap"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        CheckIn *checkIn = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [segue.destinationViewController performSelector:@selector(setSelectedCheckIn:) withObject:checkIn];
+    }
+    if ([[segue identifier] isEqualToString:@"currentMap"]) {
         [segue.destinationViewController performSelector:@selector(setItineraryEvent:) withObject:self.itineraryEvent];
     }
 }

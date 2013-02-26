@@ -58,6 +58,8 @@
 		AA3B8FAF16D1CDE30093FF21 /* JTCItineraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8FAE16D1CDE30093FF21 /* JTCItineraryViewController.m */; };
 		AA58495B16CF1AEB0005A696 /* JTCAddFlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58495A16CF1AEB0005A696 /* JTCAddFlightViewController.m */; };
 		AA61A56E16D6C2DC00944D7F /* JTCContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA61A56D16D6C2DC00944D7F /* JTCContactsViewController.m */; };
+		AA714F7616DC628700CE5D03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA714F7516DC628700CE5D03 /* CoreLocation.framework */; };
+		AA714F7816DC68AD00CE5D03 /* 141-lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = AA714F7716DC68AD00CE5D03 /* 141-lamp.png */; };
 		AA77321116CDE09E00E21C0C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77321016CDE09E00E21C0C /* CoreData.framework */; };
 		AA77321416CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA77321216CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodeld */; };
 		AA94508516D00BB200B194C4 /* JTCFlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA94508416D00BB200B194C4 /* JTCFlightsViewController.m */; };
@@ -152,6 +154,8 @@
 		AA58495A16CF1AEB0005A696 /* JTCAddFlightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCAddFlightViewController.m; sourceTree = "<group>"; };
 		AA61A56C16D6C2DC00944D7F /* JTCContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCContactsViewController.h; sourceTree = "<group>"; };
 		AA61A56D16D6C2DC00944D7F /* JTCContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCContactsViewController.m; sourceTree = "<group>"; };
+		AA714F7516DC628700CE5D03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AA714F7716DC68AD00CE5D03 /* 141-lamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "141-lamp.png"; sourceTree = "<group>"; };
 		AA77321016CDE09E00E21C0C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AA77321316CDE9A000E21C0C /* TFAEuropeTourModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TFAEuropeTourModel.xcdatamodel; sourceTree = "<group>"; };
 		AA94508316D00BB200B194C4 /* JTCFlightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCFlightsViewController.h; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA714F7616DC628700CE5D03 /* CoreLocation.framework in Frameworks */,
 				AA094B5116D5CC43006ACA65 /* MapKit.framework in Frameworks */,
 				AA77321116CDE09E00E21C0C /* CoreData.framework in Frameworks */,
 				AA2B1F3616CB414D00882834 /* UIKit.framework in Frameworks */,
@@ -200,6 +205,7 @@
 		AA2B1F2916CB414D00882834 = {
 			isa = PBXGroup;
 			children = (
+				AA714F7516DC628700CE5D03 /* CoreLocation.framework */,
 				AA094B5016D5CC43006ACA65 /* MapKit.framework */,
 				AA2B1F3B16CB414D00882834 /* TFAEuropeTour */,
 				AA2B1F3416CB414D00882834 /* Frameworks */,
@@ -270,6 +276,7 @@
 		AA2B1F6616CB420700882834 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA714F7716DC68AD00CE5D03 /* 141-lamp.png */,
 				AA2D573116D98F6B0029EB09 /* coffee.jpg */,
 				AA2D572F16D98F640029EB09 /* dinner.jpg */,
 				AA2D572D16D98F5C0029EB09 /* soccer_pitch.jpg */,
@@ -488,6 +495,7 @@
 				AA2D572E16D98F5C0029EB09 /* soccer_pitch.jpg in Resources */,
 				AA2D573016D98F640029EB09 /* dinner.jpg in Resources */,
 				AA2D573216D98F6B0029EB09 /* coffee.jpg in Resources */,
+				AA714F7816DC68AD00CE5D03 /* 141-lamp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

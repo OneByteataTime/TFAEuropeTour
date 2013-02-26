@@ -9,6 +9,7 @@
 #import "JTCItineraryDetailViewController.h"
 #import "JTCItineraryEditViewController.h"
 #import "JTCManagedDocumentHandler.h"
+#import "Category.h"
 
 @interface JTCItineraryDetailViewController ()
 
@@ -25,6 +26,9 @@
     self.labelSummary.text = self.itineraryEvent.summary;
     [self.labelSummary sizeToFit];
     [self.scrollViewSummary sizeToFit];
+    
+    NSString *imageName = self.itineraryEvent.belongsToCategory.imageName;
+    [self.imageCategory setImage:[UIImage imageNamed:imageName]];
     
     self.navigationItem.title = self.itineraryEvent.title;
     self.labelNotes.text = self.itineraryEvent.notes;

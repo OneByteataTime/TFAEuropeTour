@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UIManagedDocument *tourDatabase;
 
 @property (strong, nonatomic) ItineraryEvent *itineraryEvent;
+@property (strong, nonatomic) CheckIn *selectedCheckIn;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapCheckIn;
 @property (weak, nonatomic) IBOutlet UITextView *textNote;
