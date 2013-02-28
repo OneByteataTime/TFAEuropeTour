@@ -56,6 +56,9 @@
 		AA3B8FA316D1363F0093FF21 /* Airport+LiveSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8FA216D1363F0093FF21 /* Airport+LiveSync.m */; };
 		AA3B8FA616D1C0780093FF21 /* JTCItineraryFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8FA516D1C0780093FF21 /* JTCItineraryFetcher.m */; };
 		AA3B8FAF16D1CDE30093FF21 /* JTCItineraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8FAE16D1CDE30093FF21 /* JTCItineraryViewController.m */; };
+		AA3FD23516DEFD5D00F2F8FB /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3FD23416DEFD5D00F2F8FB /* CheckIn.m */; };
+		AA3FD23816DF04ED00F2F8FB /* JTCAddItineraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3FD23716DF04ED00F2F8FB /* JTCAddItineraryViewController.m */; };
+		AA3FD23B16DF0A6700F2F8FB /* JTCCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3FD23A16DF0A6700F2F8FB /* JTCCategoryViewController.m */; };
 		AA58495B16CF1AEB0005A696 /* JTCAddFlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58495A16CF1AEB0005A696 /* JTCAddFlightViewController.m */; };
 		AA61A56E16D6C2DC00944D7F /* JTCContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA61A56D16D6C2DC00944D7F /* JTCContactsViewController.m */; };
 		AA714F7616DC628700CE5D03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA714F7516DC628700CE5D03 /* CoreLocation.framework */; };
@@ -74,7 +77,6 @@
 		AAD5547016DAF9CE00E98B23 /* JTCItineraryLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5546F16DAF9CE00E98B23 /* JTCItineraryLocationViewController.m */; };
 		AAD5F9BA16D906F0007FA002 /* JTCItineraryEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5F9B916D906F0007FA002 /* JTCItineraryEditViewController.m */; };
 		AAED32FC16DA769800E19C0E /* CheckIn+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED32FB16DA769800E19C0E /* CheckIn+Create.m */; };
-		AAED330216DA7C3A00E19C0E /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED330116DA7C3900E19C0E /* CheckIn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +152,12 @@
 		AA3B8FA516D1C0780093FF21 /* JTCItineraryFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCItineraryFetcher.m; sourceTree = "<group>"; };
 		AA3B8FAD16D1CDE30093FF21 /* JTCItineraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCItineraryViewController.h; sourceTree = "<group>"; };
 		AA3B8FAE16D1CDE30093FF21 /* JTCItineraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCItineraryViewController.m; sourceTree = "<group>"; };
+		AA3FD23316DEFD5D00F2F8FB /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
+		AA3FD23416DEFD5D00F2F8FB /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
+		AA3FD23616DF04ED00F2F8FB /* JTCAddItineraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCAddItineraryViewController.h; sourceTree = "<group>"; };
+		AA3FD23716DF04ED00F2F8FB /* JTCAddItineraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCAddItineraryViewController.m; sourceTree = "<group>"; };
+		AA3FD23916DF0A6700F2F8FB /* JTCCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCCategoryViewController.h; sourceTree = "<group>"; };
+		AA3FD23A16DF0A6700F2F8FB /* JTCCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCCategoryViewController.m; sourceTree = "<group>"; };
 		AA58495916CF1AEB0005A696 /* JTCAddFlightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCAddFlightViewController.h; sourceTree = "<group>"; };
 		AA58495A16CF1AEB0005A696 /* JTCAddFlightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCAddFlightViewController.m; sourceTree = "<group>"; };
 		AA61A56C16D6C2DC00944D7F /* JTCContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCContactsViewController.h; sourceTree = "<group>"; };
@@ -181,8 +189,6 @@
 		AAD5F9B916D906F0007FA002 /* JTCItineraryEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCItineraryEditViewController.m; sourceTree = "<group>"; };
 		AAED32FA16DA769800E19C0E /* CheckIn+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CheckIn+Create.h"; sourceTree = "<group>"; };
 		AAED32FB16DA769800E19C0E /* CheckIn+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CheckIn+Create.m"; sourceTree = "<group>"; };
-		AAED330016DA7C3900E19C0E /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
-		AAED330116DA7C3900E19C0E /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,8 +306,8 @@
 		AA2B1F6F16CB463B00882834 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				AAED330016DA7C3900E19C0E /* CheckIn.h */,
-				AAED330116DA7C3900E19C0E /* CheckIn.m */,
+				AA3FD23316DEFD5D00F2F8FB /* CheckIn.h */,
+				AA3FD23416DEFD5D00F2F8FB /* CheckIn.m */,
 				AA2D575416D9AC120029EB09 /* ItineraryEvent.h */,
 				AA2D575516D9AC120029EB09 /* ItineraryEvent.m */,
 				AA2D575116D9A0E90029EB09 /* Category.h */,
@@ -401,6 +407,10 @@
 				AAAD9FF916D4764A0000EE54 /* JTCItineraryDetailViewController.m */,
 				AAD5F9B816D906F0007FA002 /* JTCItineraryEditViewController.h */,
 				AAD5F9B916D906F0007FA002 /* JTCItineraryEditViewController.m */,
+				AA3FD23616DF04ED00F2F8FB /* JTCAddItineraryViewController.h */,
+				AA3FD23716DF04ED00F2F8FB /* JTCAddItineraryViewController.m */,
+				AA3FD23916DF0A6700F2F8FB /* JTCCategoryViewController.h */,
+				AA3FD23A16DF0A6700F2F8FB /* JTCCategoryViewController.m */,
 			);
 			name = ItineraryEvent;
 			sourceTree = "<group>";
@@ -540,8 +550,10 @@
 				AA2D575316D9A0E90029EB09 /* Category.m in Sources */,
 				AA2D575616D9AC120029EB09 /* ItineraryEvent.m in Sources */,
 				AAED32FC16DA769800E19C0E /* CheckIn+Create.m in Sources */,
-				AAED330216DA7C3A00E19C0E /* CheckIn.m in Sources */,
 				AAD5547016DAF9CE00E98B23 /* JTCItineraryLocationViewController.m in Sources */,
+				AA3FD23516DEFD5D00F2F8FB /* CheckIn.m in Sources */,
+				AA3FD23816DF04ED00F2F8FB /* JTCAddItineraryViewController.m in Sources */,
+				AA3FD23B16DF0A6700F2F8FB /* JTCCategoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,7 +2,7 @@
 //  CheckIn.m
 //  TFAEuropeTour
 //
-//  Created by Steve Jackson on 2/24/13.
+//  Created by Steve Jackson on 2/27/13.
 //  Copyright (c) 2013 Steve Jackson. All rights reserved.
 //
 

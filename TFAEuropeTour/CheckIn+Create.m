@@ -27,8 +27,8 @@
     if ([itineraryCheckins count] == 0) {
         checkIn = [NSEntityDescription insertNewObjectForEntityForName:@"CheckIn" inManagedObjectContext:context];
         
-        checkIn.longitude = [NSNumber numberWithDouble:longitude];
-        checkIn.latitude = [NSNumber numberWithDouble:latitude];
+        checkIn.longitude = [NSNumber numberWithFloat:longitude];
+        checkIn.latitude = [NSNumber numberWithFloat:latitude];
         checkIn.name = itineraryEvent.title;
         checkIn.unique = uniqueKey;
         

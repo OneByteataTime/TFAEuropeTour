@@ -25,6 +25,18 @@
 @synthesize activeCheckIn = _activeCheckIn;
 @synthesize selectedCheckIn = _selectedCheckIn;
 
+- (void)dropPinAtCoord:(CLLocationCoordinate2D) coord {
+    
+    if ([[self.mapCheckIn annotations] count] > 1) {
+        [self.mapCheckIn removeAnnotation:[[self.mapCheckIn annotations] objectAtIndex:1]];
+    }
+    
+    JTCCheckInAnnotation *annotation = [[JTCCheckInAnnotation alloc] init];
+    [annotation setCoordinate:coord];
+    [self.mapCheckIn addAnnotation:annotation];
+    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -58,24 +70,26 @@
 #pragma mark Map Kit View delegate
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
+    // Give time for mapview to initialize and locate
+    if (0.00001 > [mapView userLocation].location.coordinate.latitude) {
+        [self performSelector:@selector(mapViewDidFinishLoadingMap:) withObject:mapView afterDelay:1.0];
+        return;
+    }
+
     MKUserLocation *userLocation = nil;
+    CLLocationCoordinate2D selectedPos;
     
     if (self.selectedCheckIn)
     {
         self.activeCheckIn = self.selectedCheckIn;
         
         // create coordinate
-        CLLocationCoordinate2D selectedPos = CLLocationCoordinate2DMake([self.selectedCheckIn.latitude doubleValue], [self.selectedCheckIn.longitude doubleValue]);
+        selectedPos = CLLocationCoordinate2DMake([self.selectedCheckIn.latitude floatValue], [self.selectedCheckIn.longitude floatValue]);
         userLocation = [[MKUserLocation alloc] init];
         userLocation.coordinate = selectedPos;
     }
     else
     {
-        // Give time for mapview to initialize and locate
-        if (0.00001 > [mapView userLocation].location.coordinate.latitude) {
-            [self performSelector:@selector(mapViewDidFinishLoadingMap:) withObject:mapView afterDelay:1.0];
-            return;
-        }
         userLocation = [mapView userLocation];
     }
     
@@ -84,6 +98,10 @@
     region.span.latitudeDelta = 0.02;
     region.span.longitudeDelta = 0.02;
     [mapView setRegion:region animated:YES];
+    
+    if (self.selectedCheckIn) {
+        [self dropPinAtCoord:selectedPos];
+    }
     
 }
 
