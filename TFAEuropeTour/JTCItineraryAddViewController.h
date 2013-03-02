@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JTCAddItineraryViewController : UITableViewController
+@interface JTCItineraryAddViewController : UITableViewController <UITextFieldDelegate>
+
+@property (nonatomic, strong) NSDictionary *itineraryEventInputs;
 
 @end

@@ -13,6 +13,8 @@
 #import "ItineraryEvent+LiveSync.h"
 #import "JTCCategoryFetcher.h"
 #import "Category+LiveSync.h"
+#import "JTCItineraryAddViewController.h"
+
 
 @interface JTCItineraryViewController ()
 
@@ -160,4 +162,33 @@
     }
 
 }
+
+- (IBAction)done:(UIStoryboardSegue *)segue
+{
+    if ([[segue identifier] isEqualToString:@"ReturnInput"]) {
+        JTCItineraryAddViewController *addController = [segue sourceViewController];
+        
+        if (addController.itineraryEventInputs) {
+            
+            [self.tourDatabase.managedObjectContext performBlock:^{
+                // perform in the NSMOC's safe thread (main thread)
+                
+                NSDictionary *itineraryInputs = addController.itineraryEventInputs;
+                //[Flight flightfromViewModel:addController.flightViewModel inManagedObjectContext:self.tourDatabase.managedObjectContext];
+                
+                //[self.tourDatabase saveToURL:self.tourDatabase.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
+                
+            }];
+        }
+        
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
+}
+- (IBAction)cancel:(UIStoryboardSegue *)segue
+{
+    if ([[segue identifier] isEqualToString:@"CancelInput"]) {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
+}
+
 @end

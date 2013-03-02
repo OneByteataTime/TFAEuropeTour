@@ -374,10 +374,10 @@
             </objects>
             <point key="canvasLocation" x="4863" y="123"/>
         </scene>
-        <!--Add Itinerary View Controller-->
+        <!--Itinerary Add View Controller-->
         <scene sceneID="vCT-Y1-HVN">
             <objects>
-                <tableViewController id="30j-kD-oLD" customClass="JTCAddItineraryViewController" sceneMemberID="viewController">
+                <tableViewController id="30j-kD-oLD" customClass="JTCItineraryAddViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="dqA-WQ-GHN">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -494,11 +494,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="sbO-wK-jWE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0B5-lS-y4F"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tSh-i7-vNc"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0B5-lS-y4F">
+                            <connections>
+                                <segue destination="US0-oK-3eZ" kind="unwind" unwindAction="cancel:" id="m1U-aV-696"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tSh-i7-vNc">
+                            <connections>
+                                <segue destination="US0-oK-3eZ" kind="unwind" identifier="ReturnInput" unwindAction="done:" id="zhz-Vs-bVW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOv-9o-tMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="US0-oK-3eZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2515" y="-84"/>
         </scene>
@@ -1175,86 +1184,6 @@
         <image name="glyphicons_335_pin_classic.png" width="24" height="24"/>
         <image name="soccer_ball.jpg" width="32" height="32"/>
     </resources>
-    <classes>
-        <class className="CoreDataTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
-        </class>
-        <class className="JTCAddFlightViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCAddFlightViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dateChanged:"/>
-                <relationship kind="outlet" name="textAirline" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textAirport" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textAirportCode" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textArriveDate" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textDepartDate" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textFlightNumber" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textSeatNumber" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="JTCAddItineraryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCAddItineraryViewController.h"/>
-        </class>
-        <class className="JTCCategoryViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCCategoryViewController.h"/>
-        </class>
-        <class className="JTCCheckInViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCCheckInViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addNote:"/>
-                <relationship kind="action" name="doneAddingNote"/>
-                <relationship kind="action" name="storeLocation:"/>
-                <relationship kind="outlet" name="buttonDone" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mapCheckIn" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="textBoxName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textNote" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="JTCFlightsViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCFlightsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
-            </relationships>
-        </class>
-        <class className="JTCItineraryDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCItineraryDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="outlet" name="imageCategory" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="labelNotes" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelSummary" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollViewNotes" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="scrollViewSummary" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="JTCItineraryEditViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCItineraryEditViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textBoxDate" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textBoxTime" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textBoxTitle" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="JTCItineraryLocationViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCItineraryLocationViewController.h"/>
-        </class>
-        <class className="JTCItineraryViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCItineraryViewController.h"/>
-        </class>
-        <class className="JTCSecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCSecondViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
