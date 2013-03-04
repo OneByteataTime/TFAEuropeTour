@@ -70,12 +70,15 @@
 #pragma mark Map Kit View delegate
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
+    
     // Give time for mapview to initialize and locate
     if (0.00001 > [mapView userLocation].location.coordinate.latitude) {
         [self performSelector:@selector(mapViewDidFinishLoadingMap:) withObject:mapView afterDelay:1.0];
         return;
     }
 
+    NSLog(@"Did Finish Loading Map");
+    
     MKUserLocation *userLocation = nil;
     CLLocationCoordinate2D selectedPos;
     
@@ -103,6 +106,10 @@
         [self dropPinAtCoord:selectedPos];
     }
     
+}
+- (void)mapViewDidStopLocatingUser:(MKMapView *)mapView
+{
+    NSLog(@"Did stop locating user");
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
