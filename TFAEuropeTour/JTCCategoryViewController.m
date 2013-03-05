@@ -12,11 +12,15 @@
 
 @interface JTCCategoryViewController ()
 
+@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
+
 @end
 
 @implementation JTCCategoryViewController
 
 @synthesize tourDatabase = _tourDatabase;
+@synthesize selectedIndexPath = _selectedIndexPath;
+@synthesize selectedCategory = _selectedCategory;
 
 - (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
 {
@@ -126,13 +130,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if (self.selectedIndexPath) {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:self.selectedIndexPath];
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+    }
+    
+    [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+    self.selectedIndexPath = indexPath;
+    Category *category = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    self.selectedCategory = category.unique;
 }
 
 @end

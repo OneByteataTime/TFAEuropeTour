@@ -50,6 +50,8 @@
 		AA2D575016D99E7D0029EB09 /* JTCCategoryFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D574F16D99E7D0029EB09 /* JTCCategoryFetcher.m */; };
 		AA2D575316D9A0E90029EB09 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D575216D9A0E90029EB09 /* Category.m */; };
 		AA2D575616D9AC120029EB09 /* ItineraryEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D575516D9AC120029EB09 /* ItineraryEvent.m */; };
+		AA394F6916E5981E00A35034 /* logo_57.png in Resources */ = {isa = PBXBuildFile; fileRef = AA394F6816E5981E00A35034 /* logo_57.png */; };
+		AA394F6B16E5982C00A35034 /* logo_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = AA394F6A16E5982C00A35034 /* logo_retina.png */; };
 		AA3B8F9A16D12A160093FF21 /* JTCFlightFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8F9916D12A160093FF21 /* JTCFlightFetcher.m */; };
 		AA3B8F9D16D134C10093FF21 /* Flight+LiveSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8F9C16D134C10093FF21 /* Flight+LiveSync.m */; };
 		AA3B8FA016D136310093FF21 /* Airline+LiveSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8F9F16D136310093FF21 /* Airline+LiveSync.m */; };
@@ -140,6 +142,8 @@
 		AA2D575216D9A0E90029EB09 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		AA2D575416D9AC120029EB09 /* ItineraryEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItineraryEvent.h; sourceTree = "<group>"; };
 		AA2D575516D9AC120029EB09 /* ItineraryEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItineraryEvent.m; sourceTree = "<group>"; };
+		AA394F6816E5981E00A35034 /* logo_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_57.png; sourceTree = "<group>"; };
+		AA394F6A16E5982C00A35034 /* logo_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_retina.png; sourceTree = "<group>"; };
 		AA3B8F9816D12A160093FF21 /* JTCFlightFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCFlightFetcher.h; sourceTree = "<group>"; };
 		AA3B8F9916D12A160093FF21 /* JTCFlightFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCFlightFetcher.m; sourceTree = "<group>"; };
 		AA3B8F9B16D134C10093FF21 /* Flight+LiveSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Flight+LiveSync.h"; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 		AA2B1F6616CB420700882834 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA394F6A16E5982C00A35034 /* logo_retina.png */,
+				AA394F6816E5981E00A35034 /* logo_57.png */,
 				AA714F7716DC68AD00CE5D03 /* 141-lamp.png */,
 				AA2D573116D98F6B0029EB09 /* coffee.jpg */,
 				AA2D572F16D98F640029EB09 /* dinner.jpg */,
@@ -506,6 +512,8 @@
 				AA2D573016D98F640029EB09 /* dinner.jpg in Resources */,
 				AA2D573216D98F6B0029EB09 /* coffee.jpg in Resources */,
 				AA714F7816DC68AD00CE5D03 /* 141-lamp.png in Resources */,
+				AA394F6916E5981E00A35034 /* logo_57.png in Resources */,
+				AA394F6B16E5982C00A35034 /* logo_retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

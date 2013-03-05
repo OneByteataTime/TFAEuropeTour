@@ -12,4 +12,9 @@
 
 @property (nonatomic, strong) NSDictionary *itineraryEventInputs;
 
+@property (weak, nonatomic) IBOutlet UITextField *textDate;
+@property (weak, nonatomic) IBOutlet UITextField *textTime;
+@property (weak, nonatomic) IBOutlet UITextField *textTitle;
+@property (weak, nonatomic) IBOutlet UITextView *textDescription;
+
 @end

@@ -392,12 +392,15 @@
                                             <rect key="frame" x="10" y="1" width="300" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="29c-Fo-dTu">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="29c-Fo-dTu">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="260" id="dkS-ke-Uy9"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="30j-kD-oLD" id="jkW-RH-kns"/>
+                                                    </connections>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUb-ZI-J7g">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -505,6 +508,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textDate" destination="29c-Fo-dTu" id="lu6-og-tMB"/>
+                        <outlet property="textDescription" destination="dcp-jP-iRb" id="zhR-CQ-Qf2"/>
+                        <outlet property="textTime" destination="XUb-ZI-J7g" id="MJB-BU-HEj"/>
+                        <outlet property="textTitle" destination="bUk-fJ-Aox" id="lJZ-ei-32m"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOv-9o-tMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="US0-oK-3eZ" userLabel="Exit" sceneMemberID="exit"/>
@@ -1131,9 +1140,16 @@
                             <outlet property="delegate" destination="Z9v-4B-FKu" id="0lL-Ba-2t5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vac-Av-VvT"/>
+                    <navigationItem key="navigationItem" id="vac-Av-VvT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="bkf-KY-y91">
+                            <connections>
+                                <segue destination="006-Mp-Rn5" kind="unwind" identifier="ReturnCategory" unwindAction="done:" id="X3P-rZ-SXD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UF-59-UR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="006-Mp-Rn5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3112" y="-448"/>
         </scene>

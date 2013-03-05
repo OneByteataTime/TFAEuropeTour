@@ -174,9 +174,9 @@
                 // perform in the NSMOC's safe thread (main thread)
                 
                 NSDictionary *itineraryInputs = addController.itineraryEventInputs;
-                //[Flight flightfromViewModel:addController.flightViewModel inManagedObjectContext:self.tourDatabase.managedObjectContext];
+                [ItineraryEvent itineraryEventWithLiveInfo:itineraryInputs inManagedObjectContext:self.tourDatabase.managedObjectContext];
                 
-                //[self.tourDatabase saveToURL:self.tourDatabase.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
+                [self.tourDatabase saveToURL:self.tourDatabase.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
                 
             }];
         }

@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 
+@class Category;
+
 @interface JTCCategoryViewController : CoreDataTableViewController
 
 @property (nonatomic, strong) UIManagedDocument *tourDatabase;
+@property (nonatomic, strong) NSString *selectedCategory;
 
 @end
