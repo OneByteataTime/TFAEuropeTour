@@ -34,7 +34,7 @@
     JTCCheckInAnnotation *annotation = [[JTCCheckInAnnotation alloc] init];
     [annotation setCoordinate:coord];
     [self.mapCheckIn addAnnotation:annotation];
-    
+    [self doRevGeocodeUsingLatitude:coord.latitude andLongitude:coord.longitude];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -93,6 +93,7 @@
     }
     else
     {
+        mapView.showsUserLocation = YES;
         userLocation = [mapView userLocation];
     }
     
@@ -104,6 +105,7 @@
     
     if (self.selectedCheckIn) {
         [self dropPinAtCoord:selectedPos];
+        mapView.showsUserLocation = NO;
     }
     
 }
@@ -124,6 +126,9 @@
         av = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:dqref];
         [av setPinColor:MKPinAnnotationColorGreen];
         [av setAnimatesDrop:YES];
+        [av setCanShowCallout:YES];
+        
+        mapView.showsUserLocation = NO;
     }
     
     return av;
@@ -144,6 +149,31 @@
     JTCCheckInAnnotation *annotation = [[JTCCheckInAnnotation alloc] init];
     [annotation setCoordinate:[self.mapCheckIn userLocation].location.coordinate];
     [self.mapCheckIn addAnnotation:annotation];
+    
+    CLLocationCoordinate2D coord = [self.mapCheckIn userLocation].location.coordinate;
+    [self doRevGeocodeUsingLatitude:coord.latitude andLongitude:coord.longitude];
+}
+
+- (void)doRevGeocodeUsingLatitude:(float)latitude andLongitude:(float)longitude
+{
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+    CLGeocoder *reverseGeoCoder = [[CLGeocoder alloc] init];
+    
+    [reverseGeoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (!error && [placemarks count] > 0) {
+            NSDictionary *dict = [[placemarks objectAtIndex:0] addressDictionary];
+            NSLog(@"street address: %@", [dict objectForKey:@"Street"]);
+            
+            for (JTCCheckInAnnotation *annotation in [self.mapCheckIn annotations]) {
+                if ([annotation isKindOfClass:[JTCCheckInAnnotation class]]) {
+                    [annotation setTitle:[dict objectForKey:@"Street"]];
+                }
+            }
+        }
+        else {
+            NSLog(@"ERROR/No Results: %@", error);
+        }
+     }];
 }
 
 - (IBAction)doneAddingNote {

@@ -12,6 +12,9 @@
 
 @interface JTCItineraryAddViewController ()
 @property (strong, nonatomic) NSString *categoryKey;
+
+- (NSString *)getItineraryEventKey;
+
 @end
 
 @implementation JTCItineraryAddViewController
@@ -48,8 +51,10 @@
 {
     if ([[segue identifier] isEqualToString:@"ReturnInput"]) {
         
+        NSString *key = [self getItineraryEventKey];
+        
         self.itineraryEventInputs = [NSDictionary dictionaryWithObjectsAndKeys:
-                               @"0228-5", EVENT_KEY,
+                               key, EVENT_KEY,
                                self.textDate.text, EVENT_DATE,
                                self.textTime.text, EVENT_TIME,
                                self.textTitle.text, EVENT_TITLE,
@@ -111,5 +116,12 @@
     return YES;
 }
 
+- (NSString *)getItineraryEventKey
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMdd-hh:mm:ss"];
+    NSDate *now = [[NSDate alloc] init];
+    return [dateFormatter stringFromDate:now];
+}
 
 @end

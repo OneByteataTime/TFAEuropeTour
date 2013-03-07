@@ -29,7 +29,7 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ItineraryEvent"];
 
     NSSortDescriptor *sort1 = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
-    NSSortDescriptor *sort2 = [NSSortDescriptor sortDescriptorWithKey:@"unique" ascending:YES];
+    NSSortDescriptor *sort2 = [NSSortDescriptor sortDescriptorWithKey:@"time" ascending:YES];
     request.sortDescriptors = [NSArray arrayWithObjects:sort1, sort2, nil];
         
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
