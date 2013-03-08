@@ -19,6 +19,7 @@
     double latitude = location.coordinate.latitude;
     
     NSString *uniqueKey = [NSString stringWithFormat:@"%f:%f", latitude, longitude];
+    NSLog(@"Check-In key:@", uniqueKey);
     
     NSSet *itineraryCheckins =
     [itineraryEvent.mapPins filteredSetUsingPredicate:

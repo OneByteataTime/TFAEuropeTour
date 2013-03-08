@@ -48,7 +48,6 @@
 		AA2D574416D99D3D0029EB09 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D574316D99D3D0029EB09 /* Flight.m */; };
 		AA2D574D16D99E3C0029EB09 /* Category+LiveSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D574C16D99E3C0029EB09 /* Category+LiveSync.m */; };
 		AA2D575016D99E7D0029EB09 /* JTCCategoryFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D574F16D99E7D0029EB09 /* JTCCategoryFetcher.m */; };
-		AA2D575316D9A0E90029EB09 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D575216D9A0E90029EB09 /* Category.m */; };
 		AA2D575616D9AC120029EB09 /* ItineraryEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D575516D9AC120029EB09 /* ItineraryEvent.m */; };
 		AA394F6916E5981E00A35034 /* logo_57.png in Resources */ = {isa = PBXBuildFile; fileRef = AA394F6816E5981E00A35034 /* logo_57.png */; };
 		AA394F6B16E5982C00A35034 /* logo_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = AA394F6A16E5982C00A35034 /* logo_retina.png */; };
@@ -58,6 +57,7 @@
 		AA3B8FA316D1363F0093FF21 /* Airport+LiveSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8FA216D1363F0093FF21 /* Airport+LiveSync.m */; };
 		AA3B8FA616D1C0780093FF21 /* JTCItineraryFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8FA516D1C0780093FF21 /* JTCItineraryFetcher.m */; };
 		AA3B8FAF16D1CDE30093FF21 /* JTCItineraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B8FAE16D1CDE30093FF21 /* JTCItineraryViewController.m */; };
+		AA3E7FFD16E946B800B99C19 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3E7FFC16E946B800B99C19 /* Category.m */; };
 		AA3FD23516DEFD5D00F2F8FB /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3FD23416DEFD5D00F2F8FB /* CheckIn.m */; };
 		AA3FD23816DF04ED00F2F8FB /* JTCItineraryAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3FD23716DF04ED00F2F8FB /* JTCItineraryAddViewController.m */; };
 		AA3FD23B16DF0A6700F2F8FB /* JTCCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3FD23A16DF0A6700F2F8FB /* JTCCategoryViewController.m */; };
@@ -138,8 +138,6 @@
 		AA2D574C16D99E3C0029EB09 /* Category+LiveSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Category+LiveSync.m"; sourceTree = "<group>"; };
 		AA2D574E16D99E7D0029EB09 /* JTCCategoryFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCCategoryFetcher.h; sourceTree = "<group>"; };
 		AA2D574F16D99E7D0029EB09 /* JTCCategoryFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCCategoryFetcher.m; sourceTree = "<group>"; };
-		AA2D575116D9A0E90029EB09 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
-		AA2D575216D9A0E90029EB09 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		AA2D575416D9AC120029EB09 /* ItineraryEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItineraryEvent.h; sourceTree = "<group>"; };
 		AA2D575516D9AC120029EB09 /* ItineraryEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItineraryEvent.m; sourceTree = "<group>"; };
 		AA394F6816E5981E00A35034 /* logo_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_57.png; sourceTree = "<group>"; };
@@ -156,6 +154,8 @@
 		AA3B8FA516D1C0780093FF21 /* JTCItineraryFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCItineraryFetcher.m; sourceTree = "<group>"; };
 		AA3B8FAD16D1CDE30093FF21 /* JTCItineraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCItineraryViewController.h; sourceTree = "<group>"; };
 		AA3B8FAE16D1CDE30093FF21 /* JTCItineraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCItineraryViewController.m; sourceTree = "<group>"; };
+		AA3E7FFB16E946B800B99C19 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		AA3E7FFC16E946B800B99C19 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		AA3FD23316DEFD5D00F2F8FB /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
 		AA3FD23416DEFD5D00F2F8FB /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
 		AA3FD23616DF04ED00F2F8FB /* JTCItineraryAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCItineraryAddViewController.h; sourceTree = "<group>"; };
@@ -312,12 +312,12 @@
 		AA2B1F6F16CB463B00882834 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				AA3E7FFB16E946B800B99C19 /* Category.h */,
+				AA3E7FFC16E946B800B99C19 /* Category.m */,
 				AA3FD23316DEFD5D00F2F8FB /* CheckIn.h */,
 				AA3FD23416DEFD5D00F2F8FB /* CheckIn.m */,
 				AA2D575416D9AC120029EB09 /* ItineraryEvent.h */,
 				AA2D575516D9AC120029EB09 /* ItineraryEvent.m */,
-				AA2D575116D9A0E90029EB09 /* Category.h */,
-				AA2D575216D9A0E90029EB09 /* Category.m */,
 				AA2D574216D99D3D0029EB09 /* Flight.h */,
 				AA2D574316D99D3D0029EB09 /* Flight.m */,
 				AA2D573916D99D3D0029EB09 /* Airline.h */,
@@ -555,13 +555,13 @@
 				AA2D574416D99D3D0029EB09 /* Flight.m in Sources */,
 				AA2D574D16D99E3C0029EB09 /* Category+LiveSync.m in Sources */,
 				AA2D575016D99E7D0029EB09 /* JTCCategoryFetcher.m in Sources */,
-				AA2D575316D9A0E90029EB09 /* Category.m in Sources */,
 				AA2D575616D9AC120029EB09 /* ItineraryEvent.m in Sources */,
 				AAED32FC16DA769800E19C0E /* CheckIn+Create.m in Sources */,
 				AAD5547016DAF9CE00E98B23 /* JTCItineraryLocationViewController.m in Sources */,
 				AA3FD23516DEFD5D00F2F8FB /* CheckIn.m in Sources */,
 				AA3FD23816DF04ED00F2F8FB /* JTCItineraryAddViewController.m in Sources */,
 				AA3FD23B16DF0A6700F2F8FB /* JTCCategoryViewController.m in Sources */,
+				AA3E7FFD16E946B800B99C19 /* Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

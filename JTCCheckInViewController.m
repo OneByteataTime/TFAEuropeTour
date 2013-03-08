@@ -70,14 +70,17 @@
 #pragma mark Map Kit View delegate
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
-    
-    // Give time for mapview to initialize and locate
-    if (0.00001 > [mapView userLocation].location.coordinate.latitude) {
-        [self performSelector:@selector(mapViewDidFinishLoadingMap:) withObject:mapView afterDelay:2.0];
-        return;
+    // Are we showing adding a new location?
+    if (mapView.showsUserLocation == YES) {
+        
+        // Give time for mapview to initialize and locate
+        if (0.00001 > [mapView userLocation].location.coordinate.latitude) {
+            [self performSelector:@selector(mapViewDidFinishLoadingMap:) withObject:mapView afterDelay:2.0];
+            return;
+        }
     }
-
-    NSLog(@"Did Finish Loading Map");
+    
+    //NSLog(@"Did Finish Loading Map");
     
     MKUserLocation *userLocation = nil;
     CLLocationCoordinate2D selectedPos;

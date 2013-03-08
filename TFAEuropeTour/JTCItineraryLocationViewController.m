@@ -143,6 +143,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         CheckIn *checkIn = [self.fetchedResultsController objectAtIndexPath:indexPath];
         [segue.destinationViewController performSelector:@selector(setSelectedCheckIn:) withObject:checkIn];
+        [segue.destinationViewController performSelector:@selector(setItineraryEvent:) withObject:self.itineraryEvent];
     }
     if ([[segue identifier] isEqualToString:@"currentMap"]) {
         [segue.destinationViewController performSelector:@selector(setItineraryEvent:) withObject:self.itineraryEvent];
