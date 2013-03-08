@@ -112,7 +112,7 @@
     
     // Configure the cell...
     cell.textLabel.text = event.title;
-    cell.detailTextLabel.text = event.summary;
+    cell.detailTextLabel.text = event.time;
     
     NSString *imageName = event.belongsToCategory.imageName;
     [[cell imageView] setImage:[UIImage imageNamed:imageName]];
