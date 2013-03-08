@@ -15,6 +15,7 @@
 @interface JTCCheckInViewController ()
 
 @property (nonatomic, strong) CheckIn *activeCheckIn;
+@property (nonatomic, strong) MKUserLocation *activeUserLocation;
 
 @end
 
@@ -24,6 +25,7 @@
 @synthesize tourDatabase = _tourDatabase;
 @synthesize activeCheckIn = _activeCheckIn;
 @synthesize selectedCheckIn = _selectedCheckIn;
+@synthesize activeUserLocation = _activeUserLocation;
 
 - (void)dropPinAtCoord:(CLLocationCoordinate2D) coord {
     
@@ -50,6 +52,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSLog(@"ViewDidLoad fired");
+    
+    if (!self.activeUserLocation) {
+        self.activeUserLocation = [[MKUserLocation alloc] init];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -70,48 +77,36 @@
 #pragma mark Map Kit View delegate
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
-    // Are we showing adding a new location?
-    if (mapView.showsUserLocation == YES) {
-        
+    // Do we have a location to show?
+    if (!self.selectedCheckIn) {
+        mapView.showsUserLocation = YES;
         // Give time for mapview to initialize and locate
         if (0.00001 > [mapView userLocation].location.coordinate.latitude) {
             [self performSelector:@selector(mapViewDidFinishLoadingMap:) withObject:mapView afterDelay:2.0];
             return;
         }
+        self.activeUserLocation = [mapView userLocation];
     }
-    
-    //NSLog(@"Did Finish Loading Map");
-    
-    MKUserLocation *userLocation = nil;
-    CLLocationCoordinate2D selectedPos;
-    
-    if (self.selectedCheckIn)
-    {
+    else {
         self.activeCheckIn = self.selectedCheckIn;
         
         // create coordinate
-        selectedPos = CLLocationCoordinate2DMake([self.selectedCheckIn.latitude floatValue], [self.selectedCheckIn.longitude floatValue]);
-        userLocation = [[MKUserLocation alloc] init];
-        userLocation.coordinate = selectedPos;
-    }
-    else
-    {
-        mapView.showsUserLocation = YES;
-        userLocation = [mapView userLocation];
-    }
-    
-    MKCoordinateRegion region = [mapView region];
-    region.center = userLocation.coordinate;
-    region.span.latitudeDelta = 0.02;
-    region.span.longitudeDelta = 0.02;
-    [mapView setRegion:region animated:YES];
-    
-    if (self.selectedCheckIn) {
+        CLLocationCoordinate2D selectedPos = CLLocationCoordinate2DMake([self.selectedCheckIn.latitude floatValue], [self.selectedCheckIn.longitude floatValue]);
+        self.activeUserLocation.coordinate = selectedPos;
+        
         [self dropPinAtCoord:selectedPos];
         mapView.showsUserLocation = NO;
     }
     
+    //NSLog(@"Did Finish Loading Map");    
+    
+    MKCoordinateRegion region = [mapView region];
+    region.center = self.activeUserLocation.coordinate;
+    region.span.latitudeDelta = 0.02;
+    region.span.longitudeDelta = 0.02;
+    [mapView setRegion:region animated:YES];
 }
+
 - (void)mapViewDidStopLocatingUser:(MKMapView *)mapView
 {
     NSLog(@"Did stop locating user");
@@ -196,7 +191,7 @@
     self.buttonDone.hidden = NO;
     self.textBoxName.hidden = NO;
     
-    CheckIn *checkIn = [CheckIn checkInFromLocation:[self.mapCheckIn userLocation] itineraryEvent:self.itineraryEvent inManagedObjectContext:self.tourDatabase.managedObjectContext];
+    CheckIn *checkIn = [CheckIn checkInFromLocation:self.activeUserLocation itineraryEvent:self.itineraryEvent inManagedObjectContext:self.tourDatabase.managedObjectContext];
     
     self.textBoxName.text = checkIn.name;
     self.textNote.text = checkIn.note;
