@@ -44,6 +44,12 @@
         <relationship name="belongsToCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="groupsEvents" inverseEntity="Category" syncable="YES"/>
         <relationship name="mapPins" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CheckIn" inverseName="locationForEvent" inverseEntity="CheckIn" syncable="YES"/>
     </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="first_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="role" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Airline" positionX="-4871" positionY="-2250" width="128" height="88"/>
         <element name="Airport" positionX="-5312" positionY="-2358" width="128" height="103"/>
@@ -51,5 +57,6 @@
         <element name="CheckIn" positionX="-5418" positionY="-2709" width="128" height="133"/>
         <element name="Flight" positionX="-5076" positionY="-2421" width="128" height="148"/>
         <element name="ItineraryEvent" positionX="-5148" positionY="-2754" width="128" height="163"/>
+        <element name="Person" positionX="-5472" positionY="-2502" width="128" height="103"/>
     </elements>
 </model>
