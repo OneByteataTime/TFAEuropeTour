@@ -85,6 +85,11 @@
 		AAD5F9BA16D906F0007FA002 /* JTCItineraryEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5F9B916D906F0007FA002 /* JTCItineraryEditViewController.m */; };
 		AAD6380116EC49D000A5AF7A /* ItineraryEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD6380016EC49D000A5AF7A /* ItineraryEvent.m */; };
 		AAED32FC16DA769800E19C0E /* CheckIn+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED32FB16DA769800E19C0E /* CheckIn+Create.m */; };
+		AAF6AA3916ECD4DE00DFEC55 /* JTCHotelFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF6AA3816ECD4DE00DFEC55 /* JTCHotelFetcher.m */; };
+		AAF6AA3C16ECD75300DFEC55 /* Hotel+LiveSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF6AA3B16ECD75300DFEC55 /* Hotel+LiveSync.m */; };
+		AAF6AA3F16ECD8A200DFEC55 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF6AA3E16ECD8A200DFEC55 /* Hotel.m */; };
+		AAF6AA4316ECDC2900DFEC55 /* JTCHotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF6AA4216ECDC2900DFEC55 /* JTCHotelViewController.m */; };
+		AAF6AA4616ECE11200DFEC55 /* JTCHotelDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF6AA4516ECE11200DFEC55 /* JTCHotelDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +214,16 @@
 		AAD6380016EC49D000A5AF7A /* ItineraryEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItineraryEvent.m; sourceTree = "<group>"; };
 		AAED32FA16DA769800E19C0E /* CheckIn+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CheckIn+Create.h"; sourceTree = "<group>"; };
 		AAED32FB16DA769800E19C0E /* CheckIn+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CheckIn+Create.m"; sourceTree = "<group>"; };
+		AAF6AA3716ECD4DE00DFEC55 /* JTCHotelFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCHotelFetcher.h; sourceTree = "<group>"; };
+		AAF6AA3816ECD4DE00DFEC55 /* JTCHotelFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCHotelFetcher.m; sourceTree = "<group>"; };
+		AAF6AA3A16ECD75300DFEC55 /* Hotel+LiveSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hotel+LiveSync.h"; sourceTree = "<group>"; };
+		AAF6AA3B16ECD75300DFEC55 /* Hotel+LiveSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Hotel+LiveSync.m"; sourceTree = "<group>"; };
+		AAF6AA3D16ECD8A200DFEC55 /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
+		AAF6AA3E16ECD8A200DFEC55 /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
+		AAF6AA4116ECDC2900DFEC55 /* JTCHotelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCHotelViewController.h; sourceTree = "<group>"; };
+		AAF6AA4216ECDC2900DFEC55 /* JTCHotelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCHotelViewController.m; sourceTree = "<group>"; };
+		AAF6AA4416ECE11200DFEC55 /* JTCHotelDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCHotelDetailViewController.h; sourceTree = "<group>"; };
+		AAF6AA4516ECE11200DFEC55 /* JTCHotelDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCHotelDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +347,8 @@
 		AA2B1F6F16CB463B00882834 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				AAF6AA3D16ECD8A200DFEC55 /* Hotel.h */,
+				AAF6AA3E16ECD8A200DFEC55 /* Hotel.m */,
 				AAD637FF16EC49D000A5AF7A /* ItineraryEvent.h */,
 				AAD6380016EC49D000A5AF7A /* ItineraryEvent.m */,
 				AA84890016EB7827005C498C /* Person.h */,
@@ -370,6 +387,8 @@
 				AA2D574F16D99E7D0029EB09 /* JTCCategoryFetcher.m */,
 				AA8488FD16EB720A005C498C /* JTCPersonFetcher.h */,
 				AA8488FE16EB720A005C498C /* JTCPersonFetcher.m */,
+				AAF6AA3716ECD4DE00DFEC55 /* JTCHotelFetcher.h */,
+				AAF6AA3816ECD4DE00DFEC55 /* JTCHotelFetcher.m */,
 			);
 			name = Load;
 			sourceTree = "<group>";
@@ -409,6 +428,8 @@
 				AAED32FB16DA769800E19C0E /* CheckIn+Create.m */,
 				AA84890416EB7896005C498C /* Person+LiveSync.h */,
 				AA84890516EB7896005C498C /* Person+LiveSync.m */,
+				AAF6AA3A16ECD75300DFEC55 /* Hotel+LiveSync.h */,
+				AAF6AA3B16ECD75300DFEC55 /* Hotel+LiveSync.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -427,6 +448,7 @@
 			children = (
 				AA2B1F5016CB414D00882834 /* MainStoryboard_iPad.storyboard */,
 				AA2B1F4D16CB414D00882834 /* MainStoryboard_iPhone.storyboard */,
+				AAF6AA4016ECDBDF00DFEC55 /* Hotels */,
 				AA84890716EB7A59005C498C /* Contacts */,
 				AAD5F9BD16D90E84007FA002 /* Flights */,
 				AAD5F9BC16D90E40007FA002 /* ItineraryEvent */,
@@ -468,6 +490,17 @@
 				AA58495A16CF1AEB0005A696 /* JTCAddFlightViewController.m */,
 			);
 			name = Flights;
+			sourceTree = "<group>";
+		};
+		AAF6AA4016ECDBDF00DFEC55 /* Hotels */ = {
+			isa = PBXGroup;
+			children = (
+				AAF6AA4116ECDC2900DFEC55 /* JTCHotelViewController.h */,
+				AAF6AA4216ECDC2900DFEC55 /* JTCHotelViewController.m */,
+				AAF6AA4416ECE11200DFEC55 /* JTCHotelDetailViewController.h */,
+				AAF6AA4516ECE11200DFEC55 /* JTCHotelDetailViewController.m */,
+			);
+			name = Hotels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,6 +635,11 @@
 				AA84890616EB7896005C498C /* Person+LiveSync.m in Sources */,
 				AA84890A16EB7A96005C498C /* JTCTravelersViewController.m in Sources */,
 				AAD6380116EC49D000A5AF7A /* ItineraryEvent.m in Sources */,
+				AAF6AA3916ECD4DE00DFEC55 /* JTCHotelFetcher.m in Sources */,
+				AAF6AA3C16ECD75300DFEC55 /* Hotel+LiveSync.m in Sources */,
+				AAF6AA3F16ECD8A200DFEC55 /* Hotel.m in Sources */,
+				AAF6AA4316ECDC2900DFEC55 /* JTCHotelViewController.m in Sources */,
+				AAF6AA4616ECE11200DFEC55 /* JTCHotelDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
