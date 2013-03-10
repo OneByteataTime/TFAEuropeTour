@@ -11,6 +11,30 @@
 
 @implementation Category (LiveSync)
 
++ (Category *)categoryFromKey:(NSString *)key inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    Category *category = nil;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Category"];
+    request.predicate = [NSPredicate predicateWithFormat:@"unique = %@", key];
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"unique" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    NSError *error = nil;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    
+    if (!matches || ([matches count] > 1)) {
+        // handle error
+    } else if ([matches count] == 0) {
+        // handle bad key
+    } else {
+        category = [matches lastObject];
+    }
+    
+    return category;
+}
+
 + (Category *)categoryWithLiveSync:(NSDictionary *)categoryInfo inManagedObjectContext:(NSManagedObjectContext *)context
 {
     Category *category = nil;

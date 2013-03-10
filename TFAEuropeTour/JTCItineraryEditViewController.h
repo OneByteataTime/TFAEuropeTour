@@ -13,10 +13,12 @@
 @interface JTCItineraryEditViewController : UITableViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) ItineraryEvent *itineraryEvent;
+@property (nonatomic, strong) UIManagedDocument *tourDatabase;
 
 @property (weak, nonatomic) IBOutlet UITextField *textBoxTitle;
 @property (weak, nonatomic) IBOutlet UITextField *textBoxDate;
 @property (weak, nonatomic) IBOutlet UITextField *textBoxTime;
+@property (weak, nonatomic) IBOutlet UITextView *textDescription;
 
 @end
 

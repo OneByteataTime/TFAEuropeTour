@@ -28,13 +28,14 @@
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ItineraryEvent"];
 
-    NSSortDescriptor *sort1 = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
-    NSSortDescriptor *sort2 = [NSSortDescriptor sortDescriptorWithKey:@"timeInterval" ascending:YES];
-    request.sortDescriptors = [NSArray arrayWithObjects:sort1, sort2, nil];
+    NSSortDescriptor *sort1 = [NSSortDescriptor sortDescriptorWithKey:@"section" ascending:YES];
+    NSSortDescriptor *sort2 = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+    NSSortDescriptor *sort3 = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObjects:sort1, sort2, sort3, nil];
         
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:self.tourDatabase.managedObjectContext
-                                                                          sectionNameKeyPath:@"date"
+                                                                          sectionNameKeyPath:@"section"
                                                                                    cacheName:nil];
 }
 
@@ -123,7 +124,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss zzzz"];
+        [dateFormatter setDateFormat:@"MM/dd/yyyy"];
 
         NSString *sectionTitle = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
         NSDate *sectionDate = [dateFormatter dateFromString:sectionTitle];

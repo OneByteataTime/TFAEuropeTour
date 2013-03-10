@@ -77,9 +77,17 @@
 - (IBAction)dateChanged:(id)sender
 {
     UIDatePicker *datePicker = (UIDatePicker *)sender;
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
-    self.textDate.text = [dateFormatter stringFromDate:[datePicker date]];
+    
+    if (datePicker.datePickerMode == UIDatePickerModeDate) {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+        self.textDate.text = [dateFormatter stringFromDate:[datePicker date]];
+    } else {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"hh:mm a"];
+        self.textTime.text = [dateFormatter stringFromDate:[datePicker date]];
+    }
+    
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -96,6 +104,23 @@
         UIDatePicker *datePicker = [[UIDatePicker alloc] init];
         datePicker.datePickerMode = UIDatePickerModeDate;
         datePicker.minimumDate = date;
+        
+        [datePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
+        textField.inputView = datePicker;
+    } else if (textField.tag == 2) {
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        [components setWeekdayOrdinal:1]; // The first Monday in the month
+        [components setMonth:1]; // May
+        [components setYear:2013];
+        NSCalendar *gregorian = [[NSCalendar alloc]
+                                 initWithCalendarIdentifier:NSGregorianCalendar];
+        NSDate *date = [gregorian dateFromComponents:components];
+        
+        UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+        datePicker.datePickerMode = UIDatePickerModeTime;
+        datePicker.minuteInterval = 5;
+        datePicker.minimumDate = date;
+        
         
         [datePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
         textField.inputView = datePicker;

@@ -58,7 +58,7 @@
         
         itineraryEvent.title = eventInfo[EVENT_TITLE];
         itineraryEvent.summary = eventInfo[EVENT_SUMMARY];
-        itineraryEvent.date = [dateFormatter dateFromString:eventInfo[EVENT_DATE]];
+        itineraryEvent.section = eventInfo[EVENT_DATE];
         itineraryEvent.time = eventInfo[EVENT_TIME];
         itineraryEvent.unique = eventInfo[EVENT_KEY];
         
@@ -70,6 +70,7 @@
         
         NSTimeInterval eventTimeInterval = [eventDate timeIntervalSinceDate:referenceDate];
         itineraryEvent.timeInterval = [NSNumber numberWithDouble:eventTimeInterval];
+        itineraryEvent.date = eventDate;
         
         itineraryEvent.belongsToCategory = [self findCategory:eventInfo[EVENT_CATEGORY] inManagedObjectContext:context];
         

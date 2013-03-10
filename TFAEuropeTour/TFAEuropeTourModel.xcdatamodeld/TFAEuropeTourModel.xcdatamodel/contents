@@ -37,6 +37,7 @@
     <entity name="ItineraryEvent" representedClassName="ItineraryEvent" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="section" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeInterval" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -57,7 +58,7 @@
         <element name="Category" positionX="-4898" positionY="-2590" width="128" height="103"/>
         <element name="CheckIn" positionX="-5418" positionY="-2709" width="128" height="133"/>
         <element name="Flight" positionX="-5076" positionY="-2421" width="128" height="148"/>
-        <element name="ItineraryEvent" positionX="-5148" positionY="-2754" width="128" height="178"/>
+        <element name="ItineraryEvent" positionX="-5148" positionY="-2754" width="128" height="193"/>
         <element name="Person" positionX="-5472" positionY="-2502" width="128" height="103"/>
     </elements>
 </model>

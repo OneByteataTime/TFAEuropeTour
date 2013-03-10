@@ -13,4 +13,5 @@
 + (Category *)categoryWithLiveSync:(NSDictionary *)categoryInfo
             inManagedObjectContext:(NSManagedObjectContext *)context;
 
++ (Category *)categoryFromKey:(NSString *)key inManagedObjectContext:(NSManagedObjectContext *)context;
 @end

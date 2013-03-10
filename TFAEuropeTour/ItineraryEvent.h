@@ -17,9 +17,10 @@
 @property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * time;
+@property (nonatomic, retain) NSNumber * timeInterval;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * unique;
-@property (nonatomic, retain) NSNumber * timeInterval;
+@property (nonatomic, retain) NSString * section;
 @property (nonatomic, retain) Category *belongsToCategory;
 @property (nonatomic, retain) NSSet *mapPins;
 @end

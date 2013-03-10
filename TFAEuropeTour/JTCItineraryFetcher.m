@@ -34,7 +34,7 @@
                            @"0330-2", EVENT_KEY,
                            @"03/30/2013", EVENT_DATE,
                            @"9:00 AM", EVENT_TIME,
-                           @"Rhine town of Rudensheim", EVENT_TITLE,
+                           @"Rudensheim", EVENT_TITLE,
                            @"cat4", EVENT_CATEGORY,
                            @"A sightseeing stop in the beautiful town of Rudesheim", EVENT_SUMMARY, nil];
 
@@ -119,7 +119,7 @@
                             @"0401-3", EVENT_KEY,
                             @"04/01/2013", EVENT_DATE,
                             @"11:00 AM", EVENT_TIME,
-                            @"Visit profesional stadium", EVENT_TITLE,
+                            @"Profesional stadium", EVENT_TITLE,
                             @"cat3", EVENT_CATEGORY,
                             @"Vist Bundesliga stadium and pro team training at Borussia Moenchengladbach", EVENT_SUMMARY, nil];
     NSDictionary *dict15 = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -156,7 +156,7 @@
                             @"0402-2", EVENT_KEY,
                             @"04/02/2013", EVENT_DATE,
                             @"9:00 AM", EVENT_TIME,
-                            @"Transfer to Brugge", EVENT_TITLE,
+                            @"Brugge", EVENT_TITLE,
                             @"cat5", EVENT_CATEGORY,
                             @"Travel to the city of Brugge, Belgium", EVENT_SUMMARY, nil];
     NSDictionary *dict20 = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -330,7 +330,7 @@
     NSDictionary *dict42 = [NSDictionary dictionaryWithObjectsAndKeys:
                             @"0407-2", EVENT_KEY,
                             @"04/07/2013", EVENT_DATE,
-                            @"10:30AM", EVENT_TIME,
+                            @"10:30 AM", EVENT_TIME,
                             @"Flight to Detroit", EVENT_TITLE,
                             @"cat5", EVENT_CATEGORY,
                             @"Depart London Heathrow for flight to Detroit", EVENT_SUMMARY, nil];

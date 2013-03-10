@@ -17,9 +17,10 @@
 @dynamic notes;
 @dynamic summary;
 @dynamic time;
+@dynamic timeInterval;
 @dynamic title;
 @dynamic unique;
-@dynamic timeInterval;
+@dynamic section;
 @dynamic belongsToCategory;
 @dynamic mapPins;
 
