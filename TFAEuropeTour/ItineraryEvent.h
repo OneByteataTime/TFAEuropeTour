@@ -2,7 +2,7 @@
 //  ItineraryEvent.h
 //  TFAEuropeTour
 //
-//  Created by Steve Jackson on 2/23/13.
+//  Created by Steve Jackson on 3/9/13.
 //  Copyright (c) 2013 Steve Jackson. All rights reserved.
 //
 
@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString * time;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * unique;
+@property (nonatomic, retain) NSNumber * timeInterval;
 @property (nonatomic, retain) Category *belongsToCategory;
 @property (nonatomic, retain) NSSet *mapPins;
 @end

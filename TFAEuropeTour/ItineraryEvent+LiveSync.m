@@ -62,6 +62,14 @@
         itineraryEvent.time = eventInfo[EVENT_TIME];
         itineraryEvent.unique = eventInfo[EVENT_KEY];
         
+        NSString *eventTimeStamp = [NSString stringWithFormat:@"%@ %@", eventInfo[EVENT_DATE], itineraryEvent.time];
+        [dateFormatter setDateFormat:@"MM/dd/yyyy hh:mm a"];
+        
+        NSDate *referenceDate = [dateFormatter dateFromString:@"01/01/2013 12:01 AM"];
+        NSDate *eventDate = [dateFormatter dateFromString:eventTimeStamp];
+        
+        NSTimeInterval eventTimeInterval = [eventDate timeIntervalSinceDate:referenceDate];
+        itineraryEvent.timeInterval = [NSNumber numberWithDouble:eventTimeInterval];
         
         itineraryEvent.belongsToCategory = [self findCategory:eventInfo[EVENT_CATEGORY] inManagedObjectContext:context];
         

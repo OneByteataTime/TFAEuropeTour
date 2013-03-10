@@ -2,7 +2,7 @@
 //  ItineraryEvent.m
 //  TFAEuropeTour
 //
-//  Created by Steve Jackson on 2/23/13.
+//  Created by Steve Jackson on 3/9/13.
 //  Copyright (c) 2013 Steve Jackson. All rights reserved.
 //
 
@@ -19,6 +19,7 @@
 @dynamic time;
 @dynamic title;
 @dynamic unique;
+@dynamic timeInterval;
 @dynamic belongsToCategory;
 @dynamic mapPins;
 
