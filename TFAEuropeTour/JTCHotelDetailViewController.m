@@ -63,6 +63,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if (cell.tag == 1) {
         NSURL *url = [NSURL URLWithString:self.hotel.url];
@@ -74,6 +78,7 @@
     else if (cell.tag == 3) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://2162251769"]];
     }
+    
 }
 
 - (void)showHotelInMaps
