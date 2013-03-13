@@ -34,6 +34,9 @@
         [hotel setName:hotelInfo[HOTEL_NAME]];
         [hotel setUrl:hotelInfo[HOTEL_URL]];
         [hotel setPhone_number:hotelInfo[HOTEL_PHONE]];
+        [hotel setLatitude:[NSNumber numberWithFloat:[hotelInfo[HOTEL_LATITUDE] floatValue]]];
+        [hotel setLongitude:[NSNumber numberWithFloat:[hotelInfo[HOTEL_LONGITUDE] floatValue]]];
+        
     } else {
         hotel = [matches lastObject];
     }

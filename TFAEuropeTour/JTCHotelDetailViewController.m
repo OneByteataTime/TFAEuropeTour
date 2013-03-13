@@ -8,8 +8,12 @@
 
 #import "JTCHotelDetailViewController.h"
 #import "Hotel.h"
+#import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface JTCHotelDetailViewController ()
+
+- (void)showHotelInMaps;
 
 @end
 
@@ -59,13 +63,33 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (cell.tag == 1) {
+        NSURL *url = [NSURL URLWithString:self.hotel.url];
+        [[UIApplication sharedApplication] openURL:url];
+    }
+    else if (cell.tag == 2) {
+        [self showHotelInMaps];
+    }
+    else if (cell.tag == 3) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://2162251769"]];
+    }
 }
 
+- (void)showHotelInMaps
+{
+    Class mapItemClass = [MKMapItem class];
+    if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
+    {
+        // Create an MKMapItem to pass to the Maps app
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([self.hotel.latitude floatValue], [self.hotel.longitude floatValue]);
+        //CLLocationCoordinate2DMake(16.775, -3.009);
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate
+                                                       addressDictionary:nil];
+        MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+        [mapItem setName:self.hotel.name];
+        // Pass the map item to the Maps app
+        [mapItem openInMapsWithLaunchOptions:nil];
+    }
+}
 @end

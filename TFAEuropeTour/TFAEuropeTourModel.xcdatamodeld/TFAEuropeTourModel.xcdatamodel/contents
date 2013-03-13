@@ -36,6 +36,8 @@
     </entity>
     <entity name="Hotel" representedClassName="Hotel" syncable="YES">
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone_number" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
@@ -64,8 +66,8 @@
         <element name="Category" positionX="-4898" positionY="-2590" width="128" height="103"/>
         <element name="CheckIn" positionX="-5418" positionY="-2709" width="128" height="133"/>
         <element name="Flight" positionX="-5076" positionY="-2421" width="128" height="148"/>
+        <element name="Hotel" positionX="-5265" positionY="-2506" width="128" height="133"/>
         <element name="ItineraryEvent" positionX="-5148" positionY="-2754" width="128" height="193"/>
         <element name="Person" positionX="-5472" positionY="-2502" width="128" height="103"/>
-        <element name="Hotel" positionX="-5265" positionY="-2506" width="128" height="103"/>
     </elements>
 </model>

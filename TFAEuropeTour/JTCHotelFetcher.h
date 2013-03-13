@@ -12,6 +12,8 @@
 #define HOTEL_URL @"url"
 #define HOTEL_COUNTRY @"country"
 #define HOTEL_PHONE @"phone"
+#define HOTEL_LATITUDE @"latitude"
+#define HOTEL_LONGITUDE @"logintude"
 
 @interface JTCHotelFetcher : NSObject
 
