@@ -10,6 +10,7 @@
 		AA094B5116D5CC43006ACA65 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA094B5016D5CC43006ACA65 /* MapKit.framework */; };
 		AA094B5416D5CD7D006ACA65 /* JTCCheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA094B5316D5CD7D006ACA65 /* JTCCheckInViewController.m */; };
 		AA094B5716D5D5EC006ACA65 /* JTCCheckInAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA094B5616D5D5EC006ACA65 /* JTCCheckInAnnotation.m */; };
+		AA0FC62516F7D1D00048398C /* JTCCurrencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0FC62416F7D1D00048398C /* JTCCurrencyViewController.m */; };
 		AA226DE616D30C4700F8F59D /* JTCManagedDocumentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA226DE516D30C4700F8F59D /* JTCManagedDocumentHandler.m */; };
 		AA226DE916D315A600F8F59D /* ItineraryEvent+LiveSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AA226DE816D315A600F8F59D /* ItineraryEvent+LiveSync.m */; };
 		AA2B1F3616CB414D00882834 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2B1F3516CB414D00882834 /* UIKit.framework */; };
@@ -98,6 +99,8 @@
 		AA094B5316D5CD7D006ACA65 /* JTCCheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JTCCheckInViewController.m; path = ../JTCCheckInViewController.m; sourceTree = "<group>"; };
 		AA094B5516D5D5EC006ACA65 /* JTCCheckInAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCCheckInAnnotation.h; sourceTree = "<group>"; };
 		AA094B5616D5D5EC006ACA65 /* JTCCheckInAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCCheckInAnnotation.m; sourceTree = "<group>"; };
+		AA0FC62316F7D1D00048398C /* JTCCurrencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCCurrencyViewController.h; sourceTree = "<group>"; };
+		AA0FC62416F7D1D00048398C /* JTCCurrencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCCurrencyViewController.m; sourceTree = "<group>"; };
 		AA226DE416D30C4700F8F59D /* JTCManagedDocumentHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCManagedDocumentHandler.h; sourceTree = "<group>"; };
 		AA226DE516D30C4700F8F59D /* JTCManagedDocumentHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCManagedDocumentHandler.m; sourceTree = "<group>"; };
 		AA226DE716D315A600F8F59D /* ItineraryEvent+LiveSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ItineraryEvent+LiveSync.h"; sourceTree = "<group>"; };
@@ -245,6 +248,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA0FC62216F7D1990048398C /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				AA0FC62316F7D1D00048398C /* JTCCurrencyViewController.h */,
+				AA0FC62416F7D1D00048398C /* JTCCurrencyViewController.m */,
+			);
+			name = Currency;
+			sourceTree = "<group>";
+		};
 		AA2B1F2916CB414D00882834 = {
 			isa = PBXGroup;
 			children = (
@@ -448,9 +460,10 @@
 			children = (
 				AA2B1F5016CB414D00882834 /* MainStoryboard_iPad.storyboard */,
 				AA2B1F4D16CB414D00882834 /* MainStoryboard_iPhone.storyboard */,
-				AAF6AA4016ECDBDF00DFEC55 /* Hotels */,
+				AA0FC62216F7D1990048398C /* Currency */,
 				AA84890716EB7A59005C498C /* Contacts */,
 				AAD5F9BD16D90E84007FA002 /* Flights */,
+				AAF6AA4016ECDBDF00DFEC55 /* Hotels */,
 				AAD5F9BC16D90E40007FA002 /* ItineraryEvent */,
 			);
 			name = Views;
@@ -640,6 +653,7 @@
 				AAF6AA4316ECDC2900DFEC55 /* JTCHotelViewController.m in Sources */,
 				AAF6AA4616ECE11200DFEC55 /* JTCHotelDetailViewController.m in Sources */,
 				AA75999E16F0220600C73BD9 /* Hotel.m in Sources */,
+				AA0FC62516F7D1D00048398C /* JTCCurrencyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
