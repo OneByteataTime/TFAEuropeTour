@@ -989,23 +989,78 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Currency Converter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91A-8e-qMG">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xnW-Lh-m7v">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="pfE-Q6-Yzz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U39-MI-p0S"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Euro to US Dollar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGV-Yz-aLx">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lGq-Lj-910"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pound to US Dollar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uy6-YG-VB5">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDP-22-qr6">
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Convert">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="US Dollar Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vHS-6v-gZF">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="waI-Uy-2E8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Currency Converter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTD-gn-p6h">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3SX-cz-sbv"/>
+                                    <constraint firstAttribute="width" constant="218" id="nnC-Wg-KEs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="91A-8e-qMG" firstAttribute="centerX" secondItem="HFC-WN-80F" secondAttribute="centerX" type="default" id="EIX-jH-WL3"/>
-                            <constraint firstItem="91A-8e-qMG" firstAttribute="centerY" secondItem="HFC-WN-80F" secondAttribute="centerY" type="default" id="oC8-ck-MJs"/>
+                            <constraint firstItem="Uy6-YG-VB5" firstAttribute="centerY" secondItem="lGq-Lj-910" secondAttribute="centerY" type="default" id="2O8-SE-JDJ"/>
+                            <constraint firstAttribute="trailing" secondItem="vDP-22-qr6" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="71S-Rb-njf"/>
+                            <constraint firstItem="xnW-Lh-m7v" firstAttribute="top" secondItem="HFC-WN-80F" secondAttribute="top" constant="222" id="AJo-MZ-puK"/>
+                            <constraint firstAttribute="trailing" secondItem="vHS-6v-gZF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="EeD-ED-2Bc"/>
+                            <constraint firstItem="vHS-6v-gZF" firstAttribute="leading" secondItem="vDP-22-qr6" secondAttribute="leading" type="default" id="HLM-i1-9v2"/>
+                            <constraint firstItem="bTD-gn-p6h" firstAttribute="centerX" secondItem="xnW-Lh-m7v" secondAttribute="centerX" type="default" id="MnP-9y-b6g"/>
+                            <constraint firstItem="lGq-Lj-910" firstAttribute="top" secondItem="U39-MI-p0S" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Rho-m5-TBd"/>
+                            <constraint firstItem="Uy6-YG-VB5" firstAttribute="leading" secondItem="cGV-Yz-aLx" secondAttribute="leading" type="default" id="U8H-jt-eR5"/>
+                            <constraint firstItem="U39-MI-p0S" firstAttribute="top" secondItem="HFC-WN-80F" secondAttribute="top" constant="72" id="VHD-dt-KOO"/>
+                            <constraint firstItem="xnW-Lh-m7v" firstAttribute="leading" secondItem="vHS-6v-gZF" secondAttribute="leading" type="default" id="Vho-uo-D6b"/>
+                            <constraint firstItem="cGV-Yz-aLx" firstAttribute="centerY" secondItem="U39-MI-p0S" secondAttribute="centerY" type="default" id="caA-1n-mK7"/>
+                            <constraint firstAttribute="bottom" secondItem="vDP-22-qr6" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="lp9-gd-HIt"/>
+                            <constraint firstAttribute="trailing" secondItem="U39-MI-p0S" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nUt-j4-umT"/>
+                            <constraint firstItem="xnW-Lh-m7v" firstAttribute="leading" secondItem="Uy6-YG-VB5" secondAttribute="leading" type="default" id="ncy-5W-ESJ"/>
+                            <constraint firstAttribute="trailing" secondItem="lGq-Lj-910" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pFi-4h-nSb"/>
+                            <constraint firstItem="vHS-6v-gZF" firstAttribute="top" secondItem="xnW-Lh-m7v" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rFp-BL-oje"/>
+                            <constraint firstItem="bTD-gn-p6h" firstAttribute="top" secondItem="HFC-WN-80F" secondAttribute="top" constant="10" id="twO-XI-lKV"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Currency" image="161-calculator.png" id="ifR-CS-zey"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wlc-AT-0G2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="1599"/>
+            <point key="canvasLocation" x="878" y="1624"/>
         </scene>
         <!--Travelers View Controller - Travellers-->
         <scene sceneID="uUW-mQ-41P">
@@ -1433,6 +1488,103 @@
         <image name="coffee.jpg" width="32" height="32"/>
         <image name="glyphicons_335_pin_classic.png" width="24" height="24"/>
     </resources>
+    <classes>
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="JTCAddFlightViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCAddFlightViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textAirline" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textAirport" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textAirportCode" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textArriveDate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textDepartDate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textFlightNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textSeatNumber" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="JTCCategoryViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCCategoryViewController.h"/>
+        </class>
+        <class className="JTCCheckInViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCCheckInViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addNote:"/>
+                <relationship kind="action" name="doneAddingNote"/>
+                <relationship kind="action" name="storeLocation:"/>
+                <relationship kind="outlet" name="buttonDone" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mapCheckIn" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="textBoxName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textNote" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="JTCFlightsViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCFlightsViewController.h"/>
+        </class>
+        <class className="JTCHotelDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCHotelDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cellCountry" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="cellName" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="cellPhone" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="cellUrl" candidateClass="UITableViewCell"/>
+            </relationships>
+        </class>
+        <class className="JTCHotelViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCHotelViewController.h"/>
+        </class>
+        <class className="JTCItineraryAddViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCItineraryAddViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dateChanged:"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="textDate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textDescription" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="textTime" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textTitle" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="JTCItineraryDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCItineraryDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageCategory" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelNotes" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelSummary" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollViewNotes" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="scrollViewSummary" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="JTCItineraryEditViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCItineraryEditViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textBoxDate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textBoxTime" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textBoxTitle" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textDescription" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="JTCItineraryLocationViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCItineraryLocationViewController.h"/>
+        </class>
+        <class className="JTCItineraryViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCItineraryViewController.h"/>
+        </class>
+        <class className="JTCSecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCSecondViewController.h"/>
+        </class>
+        <class className="JTCTravelersViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JTCTravelersViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
