@@ -42,7 +42,7 @@
                            @"0330-3", EVENT_KEY,
                            @"03/30/2013", EVENT_DATE,
                            @"2:00 PM", EVENT_TIME,
-                           @"Straelenerhof Hotel", EVENT_TITLE,
+                           @"Straelener Hof Hotel", EVENT_TITLE,
                            @"cat4", EVENT_CATEGORY,
                            @"Check into the Straelenerhof Hotel", EVENT_SUMMARY, nil];
 
