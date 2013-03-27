@@ -67,6 +67,7 @@
         float value = amount * (1.51);
         self.labelConvertedAmount.text = [NSString stringWithFormat:@"$%1.2f", value];
     }
+    [self.textboxAmount resignFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

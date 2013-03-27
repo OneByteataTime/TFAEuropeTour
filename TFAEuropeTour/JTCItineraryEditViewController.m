@@ -151,16 +151,21 @@
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"MMM dd yyyy"];
         
+        NSDate *sectionDate = [dateFormatter dateFromString:self.textBoxDate.text];
+        
         NSDateFormatter *dateFormatterCoreData = [[NSDateFormatter alloc] init];
-        [dateFormatterCoreData setDateFormat:@"MMM d, yyyy hh:mm a"];
+        [dateFormatterCoreData setDateFormat:@"MMM d yyyy hh:mm a"];
         
         NSString *eventDateTime = [NSString stringWithFormat:@"%@ %@", self.textBoxDate.text, self.textBoxTime.text];
-        NSDate *eventDate = [dateFormatter dateFromString:eventDateTime];
+        NSDate *eventDate = [dateFormatterCoreData dateFromString:eventDateTime];
         
         self.itineraryEvent.time = self.textBoxTime.text;
         self.itineraryEvent.title = self.textBoxTitle.text;
         self.itineraryEvent.date = eventDate;
-        self.itineraryEvent.section = self.textBoxDate.text;
+        
+        NSDateFormatter *sectionFormatter = [[NSDateFormatter alloc] init];
+        [sectionFormatter setDateFormat:@"MM/dd/yyyy"];
+        self.itineraryEvent.section = [sectionFormatter stringFromDate:sectionDate];
         
         self.itineraryEvent.summary = self.textDescription.text;
         [self setTimeIntervalFromItineraryEvent];

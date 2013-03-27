@@ -43,7 +43,7 @@
                            @"03/30/2013", EVENT_DATE,
                            @"2:00 PM", EVENT_TIME,
                            @"Straelener Hof Hotel", EVENT_TITLE,
-                           @"cat4", EVENT_CATEGORY,
+                           @"cat5", EVENT_CATEGORY,
                            @"Check into the Straelenerhof Hotel", EVENT_SUMMARY, nil];
 
     NSDictionary *dict5 = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -133,8 +133,8 @@
                             @"0401-5", EVENT_KEY,
                             @"04/01/2013", EVENT_DATE,
                             @"3:00 PM", EVENT_TIME,
-                            @"Game", EVENT_TITLE,
-                            @"cat3", EVENT_CATEGORY,
+                            @"Scrimmage", EVENT_TITLE,
+                            @"cat7", EVENT_CATEGORY,
                             @"Soccer match - TFA vs Straelen", EVENT_SUMMARY, nil];
     NSDictionary *dict17 = [NSDictionary dictionaryWithObjectsAndKeys:
                             @"0401-6", EVENT_KEY,
@@ -177,7 +177,7 @@
                             @"0402-5", EVENT_KEY,
                             @"04/02/2013", EVENT_DATE,
                             @"3:30 PM", EVENT_TIME,
-                            @"Games", EVENT_TITLE,
+                            @"Scrimmages", EVENT_TITLE,
                             @"cat7", EVENT_CATEGORY,
                             @"Games in Brugge area", EVENT_SUMMARY, nil];
     NSDictionary *dict23 = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -208,7 +208,7 @@
                             @"0403-3", EVENT_KEY,
                             @"04/03/2013", EVENT_DATE,
                             @"2:00 PM", EVENT_TIME,
-                            @"Game", EVENT_TITLE,
+                            @"Scrimmage", EVENT_TITLE,
                             @"cat7", EVENT_CATEGORY,
                             @"Soccer Game - TFA vs KV Oostend", EVENT_SUMMARY, nil];
 
@@ -300,16 +300,16 @@
                             @"0406-2", EVENT_KEY,
                             @"04/06/2013", EVENT_DATE,
                             @"10:30 AM", EVENT_TIME,
-                            @"Soccer Game", EVENT_TITLE,
-                            @"cat3", EVENT_CATEGORY,
+                            @"Scrimmage", EVENT_TITLE,
+                            @"cat7", EVENT_CATEGORY,
                             @"Morning game with local team", EVENT_SUMMARY, nil];
     NSDictionary *dict39 = [NSDictionary dictionaryWithObjectsAndKeys:
                             @"0406-3", EVENT_KEY,
                             @"04/06/2013", EVENT_DATE,
                             @"2:00 PM", EVENT_TIME,
-                            @"Soccer Match", EVENT_TITLE,
-                            @"cat7", EVENT_CATEGORY,
-                            @"Afternoon EPL game at Spurs, Fulham, or Reading", EVENT_SUMMARY, nil];
+                            @"Arsenal vs W. Brom", EVENT_TITLE,
+                            @"cat3", EVENT_CATEGORY,
+                            @"Afternoon EPL game Arsenal vs West Brom", EVENT_SUMMARY, nil];
     NSDictionary *dict40 = [NSDictionary dictionaryWithObjectsAndKeys:
                             @"0406-4", EVENT_KEY,
                             @"04/06/2013", EVENT_DATE,
